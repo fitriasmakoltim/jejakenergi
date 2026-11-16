@@ -1,0 +1,1891 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Komik Fisika: Lima Sekawan dan Jejak Energi di Bumi Anoa. Usaha, energi, hukum kekekalan energi mekanik, dan daya.">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Lima Sekawan dan Jejak Energi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Comic+Neue:wght@700&family=Luckiest+Guy&display=swap">
+<style>
+/* Layout: one webtoon-style column of comic panels on a dark sorume-maroon ground; one committed look for both themes. */
+:root {
+  color-scheme: dark;
+  --ground: #2b0b11;
+  --ground-2: #3d1018;
+  --maroon: #7d1622;
+  --gold: #e2a83b;
+  --gold-soft: #f6d68b;
+  --cream: #f6ecd8;
+  --paper: #fffdf7;
+  --ink: #1d1416;
+  --ink-soft: #5b4a4c;
+  --sea: #1f7aa0;
+  --ok: #1b7a3c;
+  --bad: #b3261e;
+  --f-display: "Luckiest Guy", "Baloo 2", system-ui, sans-serif;
+  --f-talk: "Comic Neue", "Comic Sans MS", "Baloo 2", sans-serif;
+  --f-ui: "Baloo 2", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  background-color: var(--ground);
+  color: var(--cream);
+  font-family: var(--f-ui);
+  font-size: 17px;
+  line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 48px;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--ground); }
+.wrap { max-width: 680px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+.band svg { display: block; width: 100%; height: 100%; }
+
+/* ---- cover ---- */
+.cover { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; padding-top: 22px; }
+.band { height: 34px; border-radius: 6px; overflow: hidden; border: 3px solid var(--ink); }
+.eyebrow { font-family: var(--f-ui); font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-soft); font-size: 14px; margin: 0; }
+h1 {
+  font-family: var(--f-display); font-weight: 400; margin: 0;
+  font-size: clamp(44px, 12vw, 86px); line-height: .92; color: var(--gold);
+  -webkit-text-stroke: 2px var(--ink); paint-order: stroke fill;
+  text-shadow: 4px 5px 0 var(--ink); text-wrap: balance;
+}
+h1 small { display: block; font-size: .5em; color: var(--cream); margin-top: 6px; }
+.lede { margin: 0; color: var(--cream); max-width: 60ch; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: 14px; font-weight: 700; padding: 3px 12px; border-radius: 999px; background: var(--ground-2); border: 2px solid var(--maroon); color: var(--gold-soft); }
+
+/* ---- sticky nav ---- */
+nav.toc {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: color-mix(in srgb, var(--ground) 92%, transparent); backdrop-filter: blur(6px);
+  margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+  padding: 10px max(16px, env(safe-area-inset-right, 0px)) 10px max(16px, env(safe-area-inset-left, 0px));
+  border-bottom: 2px solid var(--maroon);
+}
+nav.toc .row { max-width: 680px; margin: 0 auto; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; }
+nav.toc a {
+  flex: none; text-decoration: none; font-weight: 800; font-size: 15px; color: var(--cream);
+  padding: 4px 14px; border-radius: 999px; border: 2px solid var(--maroon); background: var(--ground-2);
+}
+nav.toc a:hover, nav.toc a:focus-visible { background: var(--gold); color: var(--ink); border-color: var(--ink); outline: none; }
+
+/* ---- section heads ---- */
+.sec-head { display: grid; gap: 2px; margin-top: 18px; }
+.sec-head h2 { font-family: var(--f-display); font-weight: 400; font-size: clamp(30px, 7vw, 44px); line-height: 1; margin: 0; color: var(--gold); -webkit-text-stroke: 1.5px var(--ink); text-shadow: 3px 3px 0 var(--ink); }
+.sec-head p { margin: 0; color: var(--cream); opacity: .85; }
+
+/* ---- character cards ---- */
+.cast { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.card-c { background: var(--paper); color: var(--ink); border: 3px solid var(--ink); border-radius: 10px; box-shadow: 5px 5px 0 var(--ink); padding: 12px; display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 10px; align-items: start; }
+.card-c .av { width: 76px; height: 76px; border-radius: 50%; border: 3px solid var(--ink); overflow: hidden; background: var(--cream); }
+.card-c .av svg, .card-c .av img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.card-c h3 { margin: 0; font-family: var(--f-display); font-weight: 400; font-size: 24px; line-height: 1.05; color: var(--maroon); }
+.card-c .tag { display: inline-block; font-size: 13px; font-weight: 800; background: var(--gold); border: 2px solid var(--ink); border-radius: 6px; padding: 0 7px; margin: 3px 0 4px; }
+.card-c p { margin: 0; font-size: 15px; line-height: 1.4; color: var(--ink-soft); }
+.card-c.teacher { grid-column: 1 / -1; grid-template-columns: 100px minmax(0, 1fr); }
+.card-c.teacher .photos { position: relative; width: 110px; height: 110px; }
+.card-c.teacher .photos img { width: 110px; height: 110px; border-radius: 12px; border: 3px solid var(--ink); object-fit: cover; display: block; }
+.card-c.teacher .photos .mini { position: absolute; right: -10px; bottom: -10px; width: 54px; height: 54px; border-radius: 50%; border: 3px solid var(--ink); background: var(--cream); overflow: hidden; }
+.card-c.teacher .photos .mini svg { width: 100%; height: 100%; display: block; }
+.motif-note { color: var(--cream); display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 12px; align-items: center; align-content: center; box-shadow: 5px 5px 0 var(--ink); background: var(--ground-2); border: 2px dashed var(--maroon); border-radius: 10px; padding: 10px 12px; font-size: 15px; }
+.motif-note svg { width: 64px; height: 64px; border-radius: 8px; border: 2px solid var(--ink); }
+
+/* ---- chapter title ---- */
+.chapter { background: var(--maroon); border: 3px solid var(--ink); border-radius: 10px; overflow: hidden; box-shadow: 6px 6px 0 var(--ink); margin-top: 22px; scroll-margin-top: 70px; }
+.chapter .band { border: 0; border-radius: 0; height: 28px; }
+.chapter .in { padding: 14px 18px 16px; display: grid; gap: 2px; }
+.chapter .no { font-weight: 800; letter-spacing: .14em; text-transform: uppercase; font-size: 14px; color: var(--gold-soft); }
+.chapter h2 { margin: 0; font-family: var(--f-display); font-weight: 400; font-size: clamp(30px, 7.5vw, 46px); line-height: 1; color: var(--cream); -webkit-text-stroke: 1.5px var(--ink); text-shadow: 3px 3px 0 var(--ink); text-wrap: balance; }
+.chapter .topic { color: var(--gold-soft); font-weight: 700; }
+
+/* ---- panels ---- */
+.panel { position: relative; container-type: inline-size; border: 4px solid var(--ink); background: var(--paper); box-shadow: 6px 6px 0 #12060a; overflow: hidden; border-radius: 4px; }
+.panel .art { position: relative; width: 100%; }
+.panel .art > svg { display: block; width: 100%; height: auto; }
+.bubble, .cap, .sfx { position: absolute; }
+.bubble {
+  background: #fff; color: var(--ink); border: 3px solid var(--ink); border-radius: 22px;
+  padding: 1.6cqw 2.4cqw 1.8cqw; font-family: var(--f-talk); font-weight: 700; font-size: 3.55cqw; line-height: 1.22;
+  box-shadow: .8cqw .8cqw 0 rgba(29,20,22,.18);
+}
+.bubble .nm { display: inline-block; font-family: var(--f-ui); font-weight: 800; font-size: 2.35cqw; line-height: 1.2; padding: 0 1.2cqw; border-radius: 99px; border: 2px solid var(--ink); margin-bottom: .6cqw; color: var(--ink); }
+.bubble .tail { position: absolute; bottom: calc(-3.6cqw + 3px); width: 3.4cqw; height: 3.8cqw; overflow: visible; }
+.bubble.bl .tail { left: 12%; }
+.bubble.br .tail { right: 12%; transform: scaleX(-1); }
+.bubble.think { border-radius: 50% / 46%; padding: 2.6cqw 4cqw 3cqw; text-align: center; }
+.bubble.think .dots { position: absolute; bottom: -5.5cqw; left: 46%; width: 6cqw; height: 6cqw; }
+.cap { background: rgba(255, 243, 196, .9); color: var(--ink); border: 3px solid var(--ink); padding: 1.2cqw 2cqw; font-family: var(--f-ui); font-weight: 700; font-size: 3.05cqw; line-height: 1.28; box-shadow: .7cqw .7cqw 0 rgba(29,20,22,.25); }
+.sfx { font-family: var(--f-display); color: var(--gold); -webkit-text-stroke: .5cqw var(--ink); paint-order: stroke fill; text-shadow: .6cqw .6cqw 0 var(--ink); white-space: nowrap; letter-spacing: .02em; }
+.n-fitria { background: #e8cfc6; } .n-soru { background: #f2b6a0; } .n-rume { background: #f6d68b; }
+.n-tugu { background: #b8d8f0; } .n-devi { background: #f5c0de; } .n-oto { background: #a9e3c9; }
+
+/* speech strip under whiteboard panels */
+.say { display: grid; gap: 10px; padding: 12px 14px 14px; background: var(--paper); border-top: 4px solid var(--ink); color: var(--ink); }
+.say .row { display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 10px; align-items: start; }
+.say .av { width: 46px; height: 46px; border-radius: 50%; border: 2.5px solid var(--ink); overflow: hidden; background: var(--cream); }
+.say .av svg { width: 100%; height: 100%; display: block; }
+.say .txt { background: #fff; border: 2.5px solid var(--ink); border-radius: 14px; padding: 6px 12px 8px; font-family: var(--f-talk); font-weight: 700; font-size: 16.5px; line-height: 1.35; position: relative; }
+.say .txt b.nm { display: inline-block; font-family: var(--f-ui); font-weight: 800; font-size: 13px; padding: 0 8px; border-radius: 99px; border: 2px solid var(--ink); margin-bottom: 2px; }
+
+/* phone chat */
+.chat { position: absolute; left: 28.5%; width: 43%; top: 17%; display: grid; gap: 1.8cqw; }
+.chat .m { background: #fff; color: var(--ink); border-radius: 2.2cqw; padding: 1.2cqw 1.8cqw 1.4cqw; font-family: var(--f-ui); font-weight: 500; font-size: 2.75cqw; line-height: 1.28; max-width: 88%; box-shadow: 0 .3cqw 0 rgba(0,0,0,.12); }
+.chat .m b { display: block; font-weight: 800; font-size: 2.35cqw; }
+.chat .m.me { justify-self: end; background: #d6f5c8; }
+.chat .m b.c-soru { color: #b23a1a; } .chat .m b.c-tugu { color: #1d5e9a; } .chat .m b.c-rume { color: #9a6a08; } .chat .m b.c-devi { color: #a3306e; }
+
+/* ---- problem card ---- */
+.problem { background: var(--cream); color: var(--ink); border: 3px solid var(--ink); border-radius: 10px; box-shadow: 6px 6px 0 var(--ink); padding: 16px 18px 18px; display: grid; gap: 8px; position: relative; }
+.problem .stamp { justify-self: start; font-family: var(--f-display); font-size: 22px; color: #fff; background: var(--bad); border: 3px solid var(--ink); padding: 2px 12px 0; transform: rotate(-2deg); letter-spacing: .03em; }
+.problem .place { font-weight: 800; color: var(--maroon); font-size: 15px; }
+.problem ol { margin: 0; padding-left: 1.4em; display: grid; gap: 6px; }
+.problem li { font-weight: 600; }
+.problem .hint { font-size: 14px; color: var(--ink-soft); margin: 0; }
+
+/* ---- calc card ---- */
+.calc {
+  color: var(--ink); border: 3px solid var(--ink); border-radius: 10px; box-shadow: 6px 6px 0 var(--ink); padding: 14px 16px 16px; display: grid; gap: 10px;
+  background-color: #fbfdff;
+  background-image: linear-gradient(#d9e8f4 1px, transparent 1px), linear-gradient(90deg, #d9e8f4 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.calc .hd { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 10px; align-items: center; }
+.calc .hd .av { width: 52px; height: 52px; border-radius: 50%; border: 3px solid var(--ink); overflow: hidden; background: var(--cream); }
+.calc .hd .av svg { width: 100%; height: 100%; display: block; }
+.calc h3 { margin: 0; font-family: var(--f-display); font-weight: 400; font-size: 24px; color: #1e3f78; line-height: 1.05; }
+.calc .lines { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 14px; font-family: var(--f-talk); font-weight: 700; font-size: 16.5px; font-variant-numeric: tabular-nums; }
+.calc .lines .k { color: var(--maroon); }
+.calc .lines b { color: var(--ok); }
+.calc .note { margin: 0; background: #fff3c4; border: 2px solid var(--ink); border-radius: 8px; padding: 8px 12px; font-weight: 600; font-size: 15.5px; }
+
+/* ---- summary ---- */
+.sum { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.sum .s { background: var(--paper); color: var(--ink); border: 3px solid var(--ink); border-radius: 10px; box-shadow: 5px 5px 0 var(--ink); padding: 12px 14px 14px; display: grid; gap: 6px; align-content: start; }
+.sum h3 { margin: 0; font-family: var(--f-display); font-weight: 400; font-size: 22px; color: var(--maroon); }
+.sum .f { justify-self: start; font-family: var(--f-talk); font-weight: 700; font-size: 20px; color: #1e3f78; background: #fff8d6; border: 2px solid #1e3f78; border-radius: 8px; padding: 1px 10px; }
+.sum p { margin: 0; font-size: 15px; color: var(--ink-soft); line-height: 1.42; }
+
+/* ---- quiz ---- */
+.quiz { display: grid; gap: 14px; }
+.qz { background: var(--paper); color: var(--ink); border: 3px solid var(--ink); border-radius: 10px; box-shadow: 5px 5px 0 var(--ink); padding: 14px 16px 16px; display: grid; gap: 10px; }
+.qz .qn { font-weight: 800; color: var(--maroon); font-size: 14px; letter-spacing: .08em; text-transform: uppercase; }
+.qz .qq { margin: 0; font-weight: 700; font-size: 17px; }
+.qz .opts { display: grid; gap: 8px; }
+.qz button {
+  font: inherit; font-weight: 600; font-size: 16px; text-align: left; color: var(--ink); cursor: pointer;
+  background: #fff; border: 2.5px solid var(--ink); border-radius: 10px; padding: 8px 12px; display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 8px; align-items: center;
+  transition: transform .12s ease, background .12s ease;
+}
+.qz button .l { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--ink); display: grid; place-items: center; font-weight: 800; background: var(--cream); }
+.qz button:hover:not(:disabled) { background: #fff3c4; transform: translateX(3px); }
+.qz button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.qz button:disabled { cursor: default; }
+.qz button.right { background: #d8f2df; border-color: var(--ok); }
+.qz button.right .l { background: var(--ok); color: #fff; border-color: var(--ok); }
+.qz button.wrong { background: #fbe0de; border-color: var(--bad); }
+.qz button.wrong .l { background: var(--bad); color: #fff; border-color: var(--bad); }
+.qz .ex { margin: 0; font-size: 15.5px; border-left: 5px solid var(--gold); background: #fff8e2; padding: 8px 12px; border-radius: 0 8px 8px 0; }
+.score { background: var(--maroon); border: 3px solid var(--ink); border-radius: 10px; box-shadow: 5px 5px 0 var(--ink); padding: 14px 16px; display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; }
+.score .big { font-family: var(--f-display); font-size: 34px; color: var(--gold); -webkit-text-stroke: 1px var(--ink); }
+.score button { font: inherit; font-weight: 800; background: var(--gold); color: var(--ink); border: 2.5px solid var(--ink); border-radius: 999px; padding: 4px 16px; cursor: pointer; }
+.score button:focus-visible { outline: 3px solid var(--cream); outline-offset: 2px; }
+
+footer { margin-top: 26px; font-size: 14px; color: var(--cream); opacity: .78; display: grid; gap: 4px; }
+footer b { color: var(--gold-soft); }
+
+@media (max-width: 520px) {
+  .cast, .sum { grid-template-columns: minmax(0, 1fr); }
+  .card-c.teacher { grid-template-columns: 92px minmax(0, 1fr); }
+  .card-c.teacher .photos, .card-c.teacher .photos img { width: 92px; height: 92px; }
+  .bubble { border-width: 2px; font-size: 3.85cqw; padding: 1.3cqw 2cqw 1.5cqw; line-height: 1.18; }
+  .cap { font-size: 3.3cqw; }
+  .say .txt { font-size: 15.5px; }
+  .calc .lines { grid-template-columns: minmax(0, 1fr); gap: 0 0; }
+  .calc .lines .k:empty { display: none; }
+  .calc .lines .k { margin-top: 6px; }
+}
+
+
+nav.toc { }
+nav.toc .lab-chip { flex: none; font: inherit; font-weight: 800; font-size: 15px; color: #fff; cursor: pointer; padding: 4px 14px; border-radius: 999px; border: 2px solid var(--ink); background-color: #1f6f9c; background-image: linear-gradient(rgba(20, 74, 112, .35), rgba(20, 74, 112, .35)), var(--batik-biru, none); background-size: auto, 48px 42px; text-shadow: 1px 1px 0 var(--ink); }
+nav.toc .lab-chip:hover, nav.toc .lab-chip:focus-visible, nav.toc .lab-chip[aria-expanded="true"] { outline: 3px solid var(--gold); outline-offset: 1px; }
+.lab-menu { max-width: 680px; margin: 8px auto 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+nav.toc .lab-menu a { text-decoration: none; color: var(--ink); background: var(--paper); border: 2.5px solid var(--ink); border-radius: 10px; box-shadow: 3px 3px 0 var(--ink); padding: 8px 12px; font-weight: 700; font-size: 14.5px; line-height: 1.3; display: grid; gap: 1px; }
+nav.toc .lab-menu a b { font-family: var(--f-display); font-weight: 400; font-size: 18px; color: #1f6f9c; }
+nav.toc .lab-menu a:hover, nav.toc .lab-menu a:focus-visible { border-color: var(--ink); color: var(--ink); background: #fff3c4; outline: none; }
+@media (max-width: 520px) { .lab-menu { grid-template-columns: minmax(0, 1fr); } }
+/* ---- byline, beranda ---- */
+.byline { margin: 0; font-weight: 800; color: var(--gold-soft); letter-spacing: .02em; }
+.home .id-card { background: var(--paper); color: var(--ink); border: 3px solid var(--ink); border-radius: 10px; box-shadow: 5px 5px 0 var(--ink); padding: 12px 16px; }
+.home dl { margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 16px; }
+.home dl div { min-width: 0; }
+.home dt { font-size: 12.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--maroon); }
+.home dd { margin: 0; font-weight: 700; }
+.info { background: var(--paper); color: var(--ink); border: 3px solid var(--ink); border-radius: 10px; box-shadow: 5px 5px 0 var(--ink); padding: 12px 16px 14px; display: grid; gap: 6px; }
+.info h3 { margin: 0; font-family: var(--f-display); font-weight: 400; font-size: 22px; color: var(--maroon); }
+.info p, .info ol { margin: 0; }
+.info ol { padding-left: 1.3em; display: grid; gap: 3px; }
+.info .src { font-size: 13.5px; color: var(--ink-soft); }
+.menu { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.menu .mi { text-decoration: none; color: var(--ink); background: var(--gold); border: 3px solid var(--ink); border-radius: 10px; box-shadow: 4px 4px 0 var(--ink); padding: 10px 12px; display: grid; gap: 2px; transition: transform .12s ease, box-shadow .12s ease; }
+.menu .mi .k { font-family: var(--f-display); font-size: 22px; line-height: 1; }
+.menu .mi span:last-child { font-size: 14px; font-weight: 700; line-height: 1.25; }
+.menu .mi:hover, .menu .mi:focus-visible { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); outline: none; }
+footer h3 { margin: 0; font-family: var(--f-display); font-weight: 400; color: var(--gold); font-size: 22px; }
+footer ol { margin: 0 0 6px; padding-left: 1.3em; display: grid; gap: 2px; }
+
+/* ---- Lab Mini ---- */
+.lab { background: var(--paper); color: var(--ink); border: 4px solid var(--ink); border-radius: 12px; box-shadow: 6px 6px 0 var(--ink); padding: 0 0 14px; display: grid; gap: 12px; overflow: hidden; scroll-margin-top: 70px; }
+.lab-hd { background-color: #1f6f9c; background-image: linear-gradient(rgba(20, 74, 112, .28), rgba(20, 74, 112, .28)), var(--batik-biru, none); background-size: auto, 72px 63px; border-bottom: 4px solid var(--ink); padding: 10px 16px 12px; display: grid; gap: 2px; }
+.lab-tag { justify-self: start; font-weight: 800; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; background: var(--gold); color: var(--ink); border: 2px solid var(--ink); border-radius: 6px; padding: 0 8px; }
+.lab-hd h3 { margin: 0; font-family: var(--f-display); font-weight: 400; font-size: clamp(22px, 5vw, 30px); line-height: 1.05; color: #fff; -webkit-text-stroke: 1px var(--ink); text-shadow: 2px 2px 0 var(--ink); }
+.lab-intro { display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 10px; align-items: center; padding: 0 16px; }
+.lab-intro .av { width: 46px; height: 46px; border-radius: 50%; border: 2.5px solid var(--ink); overflow: hidden; background: var(--cream); }
+.lab-intro .av svg { width: 100%; height: 100%; display: block; }
+.lab-intro p { margin: 0; font-family: var(--f-talk); font-weight: 700; font-size: 16px; line-height: 1.35; }
+.lab-body { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 14px; padding: 0 16px; align-items: start; }
+.lab-stage svg { display: block; width: 100%; height: auto; border: 3px solid var(--ink); border-radius: 8px; background: #fff; }
+.lab-ctrl { display: grid; gap: 8px; min-width: 0; }
+.lab-lbl { margin: 4px 0 0; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--maroon); }
+.seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.seg button { font: inherit; font-weight: 700; font-size: 14.5px; color: var(--ink); background: #fff; border: 2.5px solid var(--ink); border-radius: 999px; padding: 3px 12px; cursor: pointer; transition: background .12s ease; }
+.seg button:hover { background: #fff3c4; }
+.seg button.on { background: var(--gold); box-shadow: 2px 2px 0 var(--ink); }
+.seg button:focus-visible, .lab-btn:focus-visible, .lab input[type=range]:focus-visible { outline: 3px solid #1f6f9c; outline-offset: 2px; }
+.sl { display: flex; justify-content: space-between; gap: 8px; margin-top: 4px; font-size: 14.5px; font-weight: 800; color: var(--ink); }
+.sl output { font-variant-numeric: tabular-nums; color: #1f6f9c; white-space: nowrap; }
+.lab input[type=range] { width: 100%; accent-color: #1f6f9c; height: 26px; cursor: pointer; }
+.lab-btn { justify-self: start; font: inherit; font-weight: 800; font-size: 16px; color: var(--ink); background: var(--gold); border: 3px solid var(--ink); border-radius: 10px; box-shadow: 3px 3px 0 var(--ink); padding: 6px 16px; cursor: pointer; margin-top: 4px; }
+.lab-btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+.lab-out { margin: 0 16px; background: #fff8d6; border: 2.5px solid var(--ink); border-radius: 8px; padding: 8px 12px; font-size: 15.5px; line-height: 1.45; font-variant-numeric: tabular-nums; }
+.lab-out p { margin: 0; }
+.lab-ch { margin: 0 16px; display: grid; gap: 6px; }
+.lab-ch > b { font-family: var(--f-display); font-weight: 400; font-size: 20px; color: var(--maroon); }
+.lab-ch ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.lab-ch li { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 8px; align-items: start; font-size: 15.5px; line-height: 1.4; }
+.lab-ch .tick { width: 22px; height: 22px; border: 2.5px solid var(--ink); border-radius: 6px; background: #fff; margin-top: 1px; display: grid; place-items: center; }
+.lab-ch li.ok .tick { background: var(--ok); border-color: var(--ok); }
+.lab-ch li.ok .tick::after { content: ""; width: 6px; height: 11px; border: solid #fff; border-width: 0 3px 3px 0; transform: rotate(45deg) translate(-1px, -1px); }
+.lab-ch li.ok { color: var(--ok); }
+@media (max-width: 620px) {
+  .lab-body { grid-template-columns: minmax(0, 1fr); }
+  .home dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .menu { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ---- LKPD ---- */
+.lkpd .lab-hd { background-color: #7d1622; background-image: none; }
+.lk-in { display: grid; gap: 10px; padding: 0 16px; font-size: 15.5px; line-height: 1.45; }
+.lk-in p { margin: 0; }
+.lk-in h4 { margin: 10px 0 0; font-family: var(--f-display); font-weight: 400; font-size: 21px; color: var(--maroon); }
+.lk-id { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; }
+.lk-id label { display: grid; gap: 2px; font-size: 12.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--maroon); min-width: 0; }
+.lk-in input[type=text], .lk-in textarea { width: 100%; font: inherit; font-size: 15.5px; color: var(--ink); background: #fff; border: 2.5px solid var(--ink); border-radius: 8px; padding: 6px 10px; resize: vertical; }
+.lk-in input[type=text]:focus-visible, .lk-in textarea:focus-visible, .kb button:focus-visible { outline: 3px solid #1f6f9c; outline-offset: 1px; }
+.lk-goal { background: #fff8d6; border: 2.5px solid var(--ink); border-radius: 8px; padding: 6px 12px; }
+.lk-klas { display: grid; gap: 6px; }
+.kr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: center; background: #fff; border: 2px solid var(--ink); border-radius: 8px; padding: 6px 10px; }
+.kb { display: flex; gap: 6px; flex-wrap: wrap; }
+.kb button { font: inherit; font-weight: 700; font-size: 14px; color: var(--ink); background: var(--cream); border: 2.5px solid var(--ink); border-radius: 999px; padding: 2px 12px; cursor: pointer; }
+.kb button.ok { background: #d8f2df; border-color: var(--ok); color: var(--ok); }
+.kb button.no { background: #fbe0de; border-color: var(--bad); color: var(--bad); }
+.lk-score { font-weight: 800; color: #1f6f9c; }
+.lk-tbl { overflow-x: auto; }
+.lk-tbl table { border-collapse: collapse; width: 100%; font-size: 15px; }
+.lk-tbl th, .lk-tbl td { border: 2px solid var(--ink); padding: 6px 10px; text-align: left; vertical-align: top; }
+.lk-tbl th { background: var(--gold-soft); }
+.lk-tbl td:nth-child(2) { font-variant-numeric: tabular-nums; }
+.lk-tbl table.cmp td:first-child { font-weight: 800; width: 22%; }
+.lk-key { background: #eef7ff; border: 2px dashed #1f6f9c; border-radius: 8px; padding: 6px 12px; }
+.lk-key summary { cursor: pointer; font-weight: 800; color: #1f6f9c; }
+.lk-key p { margin-top: 4px; }
+.lk-key .lk-tbl { margin-top: 6px; }
+.lab-go { font: inherit; font-weight: 800; font-size: 16px; color: #fff; background: var(--maroon); border: 2.5px solid var(--ink); border-radius: 999px; padding: 6px 18px; cursor: pointer; box-shadow: 3px 3px 0 var(--ink); justify-self: start; margin-top: 4px; }
+.lab-go:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+.lab-go:focus-visible { outline: 3px solid #1f6f9c; outline-offset: 2px; }
+.lk-fig { background: #fff; border: 2.5px solid var(--ink); border-radius: 8px; padding: 4px; }
+.lk-fig svg { display: block; width: 100%; height: auto; }
+.lk-nums { display: grid; gap: 6px; }
+.lk-num { display: grid; grid-template-columns: minmax(0, 1fr) 110px 40px; gap: 8px; align-items: center; background: #fff; border: 2px solid var(--ink); border-radius: 8px; padding: 5px 10px; }
+.lk-num input[type=text] { text-align: right; font-variant-numeric: tabular-nums; padding: 3px 8px; }
+.lk-num .u { font-weight: 800; color: var(--ink-soft); }
+.lk-num.ok { background: #d8f2df; border-color: var(--ok); }
+.lk-num.ok input[type=text] { border-color: var(--ok); }
+.lk-num.no { background: #fbe0de; border-color: var(--bad); }
+.lk-note { font-size: 13.5px; color: var(--ink-soft); }
+.lab-fb { margin: 0; font-size: 14.5px; }
+.lab-fb.ok { color: var(--ok); } .lab-fb.no { color: var(--bad); }
+@media (max-width: 620px) { .lk-id { grid-template-columns: minmax(0, 1fr); } .kr { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+</head>
+<body>
+<div id="defs"></div>
+<div class="wrap">
+  <header class="cover">
+    <div class="band" id="band1"></div>
+    <p class="eyebrow">Komik Fisika · SMA · Usaha, Energi, dan Daya</p>
+    <h1>Lima Sekawan<small>dan Jejak Energi di Bumi Anoa</small></h1>
+    <p class="lede">Dari kotak kakao yang meluncur di gudang koperasi sampai air terjun yang bisa menyalakan lampu, Soru, Rume, Tugu, Devi, dan Oto menelusuri ke mana energi pergi bersama Bu Fitria.</p>
+    <div class="meta"><span class="chip">Usaha</span><span class="chip">Energi Kinetik dan Potensial</span><span class="chip">Kekekalan Energi Mekanik</span><span class="chip">Daya</span></div>
+    <p class="byline">Fitria Ashari · SMA Negeri 1 Kolaka Timur</p>
+    <div id="coverArt"></div>
+  </header>
+
+  <nav class="toc" aria-label="Daftar isi"><div class="row">
+    <a href="#beranda">Beranda</a><a href="#tokoh">Tokoh</a><a href="#bab-1">Bab 1</a><a href="#bab-2">Bab 2</a><button type="button" class="lab-chip" id="labBtn" aria-expanded="false" aria-controls="labMenu">Lab Mini ▾</button><a href="#lkpd">LKPD</a><a href="#rangkuman">Rangkuman</a><a href="#kuis">Kuis</a>
+  </div>
+    <div class="lab-menu" id="labMenu" hidden>
+      <a href="#lab-1"><b>Lab 1</b> Peluncur energi</a>
+      <a href="#lab-2"><b>Lab 2</b> Adu daya mengangkat kotak</a>
+      <a href="#lab-3"><b>Lab 3</b> Turbin air mini</a>
+      <a href="#lkpd"><b>LKPD 4</b> Usaha, energi, dan daya terintegrasi</a>
+    </div>
+  </nav>
+
+  <section id="beranda" class="wrap home" style="scroll-margin-top:70px">
+    <div class="sec-head"><h2>Beranda</h2><p>Media pembelajaran interaktif berbentuk komik untuk penguatan konsep usaha, energi, dan daya.</p></div>
+    <div class="id-card">
+      <dl>
+        <div><dt>Mata pelajaran</dt><dd>Fisika</dd></div>
+        <div><dt>Jenjang</dt><dd>SMA</dd></div>
+        <div><dt>Topik</dt><dd>Usaha, Energi, dan Daya</dd></div>
+        <div><dt>Penyusun</dt><dd>Fitria Ashari</dd></div>
+        <div><dt>Sekolah</dt><dd>SMA Negeri 1 Kolaka Timur</dd></div>
+        <div><dt>Pertemuan ke-4</dt><dd>90 menit</dd></div>
+      </dl>
+    </div>
+    <article class="info">
+      <h3>Tujuan Pembelajaran</h3>
+      <p>Murid dapat <b>mengintegrasikan dan memperkuat pemahaman konsep usaha, energi potensial, energi kinetik, hukum kekekalan energi mekanik, dan daya melalui penyelesaian masalah</b>. Setelah membaca komik dan mencoba Lab Mini, kamu dapat:</p>
+      <ol>
+        <li>mengidentifikasi konsep fisika yang relevan dalam sebuah kasus terintegrasi;</li>
+        <li>menghitung energi benda pada setiap tahap geraknya;</li>
+        <li>menghitung usaha gaya gesek dan pengaruhnya terhadap energi kinetik;</li>
+        <li>menghitung daya dan efisiensi dari sebuah proses perubahan energi;</li>
+        <li>menjelaskan langkah penyelesaian masalah secara runtut.</li>
+      </ol>
+    </article>
+    <article class="info">
+      <h3>Alur Belajar</h3>
+      <ol>
+        <li><b>Memahami:</b> baca komik Bab 1 dan Bab 2. Setiap bab dibuka dengan <b>Stimulus Masalah</b>. Pilih kasus yang paling menarik, lalu rumuskan pertanyaanmu sendiri.</li>
+        <li><b>Mengaplikasikan:</b> coba <b>Lab Mini 1–3</b>, lalu kerjakan <b>LKPD Pertemuan ke-4</b> bersama kelompokmu.</li>
+        <li><b>Merefleksikan:</b> presentasikan jawaban kelompokmu, tanggapi kelompok lain, isi refleksi diri, lalu kerjakan <b>Kuis</b>.</li>
+      </ol>
+    </article>
+    <div class="menu">
+      <a href="#tokoh" class="mi"><span class="k">Tokoh</span><span>Kenalan dengan lima sekawan</span></a>
+      <a href="#bab-1" class="mi"><span class="k">Bab 1</span><span>Kotak kakao meluncur · Lab Mini 1</span></a>
+      <a href="#bab-2" class="mi"><span class="k">Bab 2</span><span>Daya dan efisiensi · Lab Mini 2 dan 3</span></a>
+      <a href="#lkpd" class="mi"><span class="k">LKPD 4</span><span>Kerja kelompok dan refleksi</span></a>
+      <a href="#rangkuman" class="mi"><span class="k">Rangkuman</span><span>Empat hal penting</span></a>
+      <a href="#kuis" class="mi"><span class="k">Kuis</span><span>Enam soal evaluasi</span></a>
+    </div>
+  </section>
+
+  <section id="tokoh" class="wrap" style="scroll-margin-top:70px">
+    <div class="sec-head"><h2>Kenalan Dulu</h2><p>Lima sahabat dari lima suku di Sulawesi Tenggara, satu kelas, satu rasa penasaran.</p></div>
+    <div class="cast" id="cast"></div>
+    <div class="motif-note"><div id="motifSwatch"></div><div><b style="color:var(--gold-soft)">Motif bunga sorume</b> pada ikat kepala Soru, pin jilbab Rume, dan baju Bu Fitria merupakan bunga anggrek khas Kolaka Timur. Kelima sahabat memakai batik biru bermotif sorume.</div></div>
+  </section>
+
+  <main class="wrap" id="strip"></main>
+
+  <section id="rangkuman" class="wrap" style="scroll-margin-top:70px">
+    <div class="sec-head"><h2>Rangkuman</h2><p>Empat hal penting tentang usaha, energi, dan daya.</p></div>
+    <div class="sum" id="sum"></div>
+  </section>
+
+  <section id="kuis" class="wrap" style="scroll-margin-top:70px">
+    <div class="sec-head"><h2>Kuis Lima Sekawan</h2><p>Pilih satu jawaban. Pembahasan muncul setelah kamu memilih.</p></div>
+    <div class="quiz" id="quiz"></div>
+    <div class="score"><div><div style="font-weight:800">Skor kamu</div><div class="big" id="scoreTxt">0 / 6</div></div><button type="button" id="resetQuiz">Ulangi kuis</button></div>
+    <article class="info"><h3>Tindak Lanjut</h3><p>Kerjakan latihan soal tambahan dari gurumu di rumah. Coba ubah angka pada Lab Mini 1, hitung dulu hasilnya di buku, lalu cocokkan. Persiapkan dirimu untuk <b>asesmen sumatif</b> usaha, energi, dan daya.</p></article>
+  </section>
+
+  <footer>
+    <h3>Daftar Pustaka</h3>
+    <ol>
+      <li>Rencana pembelajaran Fisika "Konsep Usaha, Energi, dan Daya", Pertemuan ke-4, beserta LKPD Pertemuan ke-4, Kolaka Timur, 2026.</li>
+      <li>Giancoli, D. C. <i>Physics: Principles with Applications</i>; Halliday, Resnick, &amp; Walker, <i>Fundamentals of Physics</i>. Angka pada contoh turbin adalah contoh hitungan, bukan data pengukuran.</li>
+    </ol>
+    <div><b>Penyusun:</b> Fitria Ashari, SMA Negeri 1 Kolaka Timur. Tokoh siswa dan latar adalah karya fiksi untuk pembelajaran.</div>
+  </footer>
+</div>
+
+<script>/* ===== Lima Sekawan — SVG art engine ===== */
+const INK = '#1d1416';
+const C = {
+  maroon: '#7d1622', maroonD: '#561018', gold: '#e2a83b', goldD: '#b07a1c', cream: '#f4e7cf',
+  shirt: '#fbfbf6', shirtS: '#dcdcd2', grey: '#8d8f96', sky1: '#8fd3f0', sky2: '#d9f1fa',
+};
+
+/* sorume flower glyph (5 slender golden petals, as on the red shirt) */
+function sorume(cx, cy, r, fill = C.gold, rot = 0) {
+  let s = `<g transform="translate(${cx},${cy}) rotate(${rot})">`;
+  for (let i = 0; i < 5; i++) {
+    const a = i * 72;
+    s += `<path transform="rotate(${a})" d="M0,0 C${r * .28},${-r * .35} ${r * .05},${-r * .8} ${r * .32},${-r}  C${-r * .02},${-r * .78} ${-r * .22},${-r * .4} 0,0Z" fill="${fill}" stroke="${C.goldD}" stroke-width="${r * .05}"/>`;
+  }
+  s += `<circle r="${r * .16}" fill="${C.goldD}"/></g>`;
+  return s;
+}
+function sorumeC(cx, cy, r, fill, stroke, center, rot = 0) {
+  let s = `<g transform="translate(${cx},${cy}) rotate(${rot})">`;
+  for (let i = 0; i < 5; i++) s += `<path transform="rotate(${i * 72})" d="M0,0 C${r * .3},${-r * .35} ${r * .05},${-r * .8} ${r * .34},${-r} C${-r * .02},${-r * .78} ${-r * .24},${-r * .4} 0,0Z" fill="${fill}" stroke="${stroke}" stroke-width="${Math.max(1, r * .09)}" stroke-linejoin="round"/>`;
+  return s + `<circle r="${r * .2}" fill="${center}"/></g>`;
+}
+function wave(x, y, k, col) {
+  return `<path transform="translate(${x},${y}) scale(${k})" d="M0,0 C0,-10 12,-12 14,-4 C16,4 6,6 6,0 M14,-4 C18,-14 30,-12 30,-2 C30,6 22,6 22,0" fill="none" stroke="${col}" stroke-width="3" stroke-linecap="round"/>`;
+}
+function crossX(cx, cy, r, col = C.cream, w = 3) {
+  return `<path d="M${cx - r},${cy - r}L${cx + r},${cy + r}M${cx + r},${cy - r}L${cx - r},${cy + r}" stroke="${col}" stroke-width="${w}" stroke-linecap="round"/>`;
+}
+
+function defs() {
+  return `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <pattern id="pSorume" width="60" height="60" patternUnits="userSpaceOnUse">
+    <rect width="60" height="60" fill="${C.maroon}"/>
+    ${crossX(14, 14, 6, C.cream, 2.4)}
+    ${sorume(44, 42, 13)}
+    <circle cx="44" cy="12" r="1.6" fill="${C.cream}"/><circle cx="12" cy="44" r="1.6" fill="${C.cream}"/>
+  </pattern>
+  <pattern id="pSorumeS" width="34" height="34" patternUnits="userSpaceOnUse">
+    <rect width="34" height="34" fill="${C.maroon}"/>
+    ${crossX(8, 8, 3.5, C.cream, 1.6)}
+    ${sorume(25, 24, 8)}
+  </pattern>
+  <pattern id="pZig" width="40" height="30" patternUnits="userSpaceOnUse">
+    <rect width="40" height="30" fill="${C.cream}"/>
+    <path d="M0,30 L20,4 L40,30Z" fill="${INK}"/>
+    <path d="M14,24 L20,15 L26,24Z" fill="${C.cream}"/>
+  </pattern>
+  <pattern id="pBatikMerah" width="72" height="72" patternUnits="userSpaceOnUse">
+    <rect width="72" height="72" fill="#b8232f"/>
+    ${crossX(16, 16, 7, C.cream, 2.6)}
+    ${sorume(52, 50, 17)}
+    <path d="M52,8 l5,7 l-5,7 l-5,-7Z M10,52 l5,7 l-5,7 l-5,-7Z" fill="#7a1018"/>
+    <circle cx="34" cy="34" r="2" fill="${C.cream}"/><circle cx="70" cy="2" r="2" fill="${C.cream}"/>
+  </pattern>
+  <pattern id="pBandV" width="40" height="34" patternUnits="userSpaceOnUse">
+    <rect width="40" height="34" fill="#561018"/>
+    <path d="M20,2 L36,17 L20,32 L4,17Z" fill="${C.gold}" stroke="${C.cream}" stroke-width="2.5"/>
+    <path d="M20,10 L28,17 L20,24 L12,17Z" fill="#b8232f"/>
+  </pattern>
+  <pattern id="pBatikBiru" width="46" height="40" patternUnits="userSpaceOnUse">
+    <rect width="46" height="40" fill="#2b8fd6"/>
+    ${sorumeC(13, 18, 13, '#ffffff', '#e8873a', '#e8873a', 10)}
+    ${wave(26, 34, .55, '#1d2f7a')}
+    <circle cx="38" cy="8" r="2.4" fill="#e8873a"/><circle cx="34" cy="20" r="1.6" fill="#fff"/>
+  </pattern>
+  <pattern id="pBatikBiruL" width="96" height="84" patternUnits="userSpaceOnUse">
+    <rect width="96" height="84" fill="#2b8fd6"/>
+    ${sorumeC(26, 30, 24, '#ffffff', '#e8873a', '#e8873a', 10)}
+    ${sorumeC(74, 66, 14, '#ffffff', '#e8873a', '#e8873a', -20)}
+    ${wave(54, 22, 1, '#1d2f7a')}${wave(6, 74, 1, '#1d2f7a')}
+    <circle cx="84" cy="14" r="3" fill="#e8873a"/><circle cx="46" cy="52" r="2.4" fill="#fff"/>
+  </pattern>
+  <linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fc8ec"/><stop offset="1" stop-color="#e3f5fb"/></linearGradient>
+  <linearGradient id="gDusk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7a96b"/><stop offset=".55" stop-color="#fbd7a0"/><stop offset="1" stop-color="#fdf0d5"/></linearGradient>
+  <linearGradient id="gSea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2aa3c4"/><stop offset="1" stop-color="#11688c"/></linearGradient>
+  <linearGradient id="gDeep" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5ed0e6"/><stop offset=".5" stop-color="#1d7fa8"/><stop offset="1" stop-color="#0b3556"/></linearGradient>
+  <linearGradient id="gRiver" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fb7a4"/><stop offset="1" stop-color="#4b8b7a"/></linearGradient>
+  <linearGradient id="gFresh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fe0d8"/><stop offset="1" stop-color="#3fa9a0"/></linearGradient>
+  <radialGradient id="gBurst"><stop offset="0" stop-color="#fff6c9"/><stop offset="1" stop-color="#f4c95d"/></radialGradient>
+  </defs></svg>`;
+}
+
+/* ---------- CHARACTERS ---------- */
+const CHAR = {
+  fitria: { skin: '#f0c7a6', hijab: '#f1e3c6', hijabS: '#cdb48a', top: 'url(#pBatikMerah)', topSolid: '#b8232f', kind: 'hijab', drape: 'pashmina' },
+  rume: { skin: '#f3cba4', hijab: '#ffffff', hijabS: '#cfd3db', top: 'url(#pBatikBiruL)', kind: 'hijab', pin: true },
+  soru: { skin: '#dfa274', hair: '#1b1414', top: 'url(#pBatikBiruL)', kind: 'soru' },
+  tugu: { skin: '#d49867', hair: '#231a17', top: 'url(#pBatikBiruL)', kind: 'tugu' },
+  devi: { skin: '#e9b58b', hair: '#191215', top: 'url(#pBatikBiruL)', kind: 'devi' },
+  oto: { skin: '#b4774b', hair: '#1f1612', top: 'url(#pBatikBiruL)', kind: 'oto' },
+};
+
+function eyes(e, look = 0) {
+  const L = -32, R = 32, y = -255;
+  const lx = look * 4;
+  if (e === 'happy' || e === 'laugh') {
+    return [L, R].map(x => `<path d="M${x - 11},${y + 3} Q${x},${y - 12} ${x + 11},${y + 3}" fill="none" stroke="${INK}" stroke-width="6" stroke-linecap="round"/>`).join('');
+  }
+  if (e === 'wince') {
+    return `<path d="M${L - 12},${y - 6} L${L + 10},${y} L${L - 12},${y + 6}" fill="none" stroke="${INK}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M${R + 12},${y - 6} L${R - 10},${y} L${R + 12},${y + 6}" fill="none" stroke="${INK}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>`;
+  }
+  const big = e === 'surprise';
+  const ry = big ? 17 : 13, rx = big ? 12 : 9.5;
+  const dy = e === 'think' ? -5 : 0, dx = e === 'think' ? 5 : lx;
+  return [L, R].map(x => `
+    ${big ? `<ellipse cx="${x}" cy="${y}" rx="${rx + 6}" ry="${ry + 6}" fill="#fff" stroke="${INK}" stroke-width="3"/>` : ''}
+    <ellipse cx="${x + dx}" cy="${y + dy}" rx="${rx}" ry="${ry}" fill="${INK}"/>
+    <circle cx="${x + dx + 3.5}" cy="${y + dy - 5}" r="3.6" fill="#fff"/>`).join('');
+}
+function brows(e) {
+  const y = -284;
+  const set = {
+    surprise: [[-46, y - 12, -18, y - 16], [18, y - 16, 46, y - 12]],
+    worry: [[-46, y + 2, -18, y - 8], [18, y - 8, 46, y + 2]],
+    wince: [[-46, y - 2, -18, y + 6], [18, y + 6, 46, y - 2]],
+    think: [[-46, y - 2, -18, y - 4], [18, y - 10, 46, y - 6]],
+  }[e] || [[-46, y - 2, -18, y - 6], [18, y - 6, 46, y - 2]];
+  return set.map(([a, b, c, d]) => `<path d="M${a},${b} L${c},${d}" stroke="${INK}" stroke-width="6" stroke-linecap="round"/>`).join('');
+}
+function mouth(e) {
+  const y = -206;
+  switch (e) {
+    case 'laugh': case 'grin':
+      return `<path d="M-28,${y - 6} Q0,${y + 34} 28,${y - 6} Z" fill="#8a1f2a" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/><path d="M-22,${y - 3} L22,${y - 3} L18,${y + 4} L-18,${y + 4}Z" fill="#fff"/><path d="M-12,${y + 18} Q0,${y + 10} 12,${y + 18}" fill="#e8737f"/>`;
+    case 'talk': case 'explain':
+      return `<path d="M-17,${y - 4} Q0,${y + 20} 17,${y - 4} Q0,${y + 2} -17,${y - 4}Z" fill="#8a1f2a" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/>`;
+    case 'surprise':
+      return `<ellipse cx="0" cy="${y + 2}" rx="11" ry="14" fill="#8a1f2a" stroke="${INK}" stroke-width="4"/>`;
+    case 'wince':
+      return `<path d="M-20,${y + 4} Q-10,${y - 6} 0,${y + 4} Q10,${y - 6} 20,${y + 4}" fill="none" stroke="${INK}" stroke-width="5" stroke-linecap="round"/>`;
+    case 'worry':
+      return `<path d="M-16,${y + 6} Q0,${y - 6} 16,${y + 6}" fill="none" stroke="${INK}" stroke-width="5" stroke-linecap="round"/>`;
+    case 'think':
+      return `<path d="M-12,${y + 2} L14,${y - 2}" stroke="${INK}" stroke-width="5" stroke-linecap="round"/>`;
+    case 'happy':
+      return `<path d="M-22,${y - 4} Q0,${y + 20} 22,${y - 4}" fill="none" stroke="${INK}" stroke-width="5.5" stroke-linecap="round"/>`;
+    default:
+      return `<path d="M-18,${y - 2} Q0,${y + 13} 18,${y - 2}" fill="none" stroke="${INK}" stroke-width="5.5" stroke-linecap="round"/>`;
+  }
+}
+function face(c, e, opt) {
+  const blush = `<ellipse cx="-54" cy="-224" rx="15" ry="8" fill="#ef7f86" opacity=".38"/><ellipse cx="54" cy="-224" rx="15" ry="8" fill="#ef7f86" opacity=".38"/>`;
+  const nose = `<path d="M-2,-238 Q6,-228 -4,-224" fill="none" stroke="${INK}" stroke-width="3.5" stroke-linecap="round" opacity=".7"/>`;
+  const sweat = e === 'wince' || e === 'worry' ? `<path d="M84,-300 q10,18 0,26 q-10,-8 0,-26z" fill="#9fdcf5" stroke="${INK}" stroke-width="2.5"/>` : '';
+  return blush + eyes(e, opt.look || 0) + brows(e) + nose + mouth(e) + sweat;
+}
+
+function torso(c, opt) {
+  const top = c.top;
+  const teacher = c.drape === 'pashmina';
+  let s = `<path d="M-150,0 C-152,-78 -122,-124 -62,-138 L62,-138 C122,-124 152,-78 150,0 Z" fill="${top}" stroke="${INK}" stroke-width="5"/>`;
+  if (!teacher) {
+    // blue sorume batik shirt: same-fabric collar, navy placket with buttons
+    s += `<path d="M0,-112 L0,0" stroke="#1d2f7a" stroke-width="5"/>
+      ${[-80, -48, -16].map(by => `<circle cx="0" cy="${by}" r="5" fill="#fff" stroke="${INK}" stroke-width="2"/>`).join('')}
+      <path d="M-46,-140 L0,-106 L-20,-86 L-58,-128Z" fill="url(#pBatikBiru)" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M46,-140 L0,-106 L20,-86 L58,-128Z" fill="url(#pBatikBiru)" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/>`;
+    if (opt.goggleNeck) s += goggles(0, -112, .9);
+  } else {
+    s += `<rect x="-22" y="-138" width="44" height="138" fill="url(#pBandV)" stroke="${INK}" stroke-width="4"/>
+      <path d="M-150,0 C-152,-78 -122,-124 -62,-138 L62,-138 C122,-124 152,-78 150,0" fill="none" stroke="${INK}" stroke-width="5"/>
+      <rect x="-150" y="-20" width="300" height="20" fill="url(#pZig)" opacity=".95"/>`;
+  }
+  return s;
+}
+function goggles(x, y, k = 1) {
+  return `<g transform="translate(${x},${y}) scale(${k})">
+    <path d="M-62,0 L62,0" stroke="${INK}" stroke-width="5"/>
+    <rect x="-56" y="-16" width="46" height="32" rx="12" fill="#8a5a2b" stroke="${INK}" stroke-width="4"/>
+    <rect x="10" y="-16" width="46" height="32" rx="12" fill="#8a5a2b" stroke="${INK}" stroke-width="4"/>
+    <rect x="-49" y="-9" width="32" height="18" rx="8" fill="#a9e3f5" stroke="${INK}" stroke-width="2.5"/>
+    <rect x="17" y="-9" width="32" height="18" rx="8" fill="#a9e3f5" stroke="${INK}" stroke-width="2.5"/>
+    <path d="M-44,-5 l8,-2 M22,-5 l8,-2" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  </g>`;
+}
+function hand(x, y, skin, finger) {
+  let s = `<circle cx="${x}" cy="${y}" r="22" fill="${skin}" stroke="${INK}" stroke-width="4.5"/>`;
+  if (finger) s += `<rect x="${x - 6}" y="${y - 48}" width="13" height="36" rx="6.5" fill="${skin}" stroke="${INK}" stroke-width="4"/>`;
+  return s;
+}
+function arm(c, pose) {
+  if (pose === 'point' && c.drape !== 'pashmina') pose = 'wave';
+  if (pose === 'point') pose = 'stick';
+  const sleeve = c.top, sk = c.skin;
+  const sl = (d) => `<path d="${d}" fill="none" stroke="${INK}" stroke-width="44" stroke-linecap="round"/><path d="${d}" fill="none" stroke="${sleeve}" stroke-width="35" stroke-linecap="round"/>`;
+  switch (pose) {
+    case 'point': return sl('M112,-96 Q170,-130 176,-196') + hand(176, -210, sk, true);
+    case 'cheer': return sl('M112,-96 Q178,-160 168,-250') + `<circle cx="168" cy="-266" r="26" fill="${sk}" stroke="${INK}" stroke-width="4.5"/>`;
+    case 'think': return sl('M-100,-40 Q-30,-70 -14,-150') + hand(-12, -168, sk, false);
+    case 'ear': return sl('M112,-96 Q150,-150 112,-232') + hand(98, -246, sk, false);
+    case 'wave': return sl('M112,-96 Q196,-150 196,-236') + `<g transform="translate(196,-262)"><ellipse rx="24" ry="30" fill="${sk}" stroke="${INK}" stroke-width="4.5"/><path d="M-10,-22 v-14 M2,-26 v-16 M14,-22 v-14" stroke="${INK}" stroke-width="4"/></g>`;
+    case 'stick': return `<path d="M160,-176 L240,-410" stroke="${INK}" stroke-width="13" stroke-linecap="round"/><path d="M160,-176 L240,-410" stroke="#8a5a33" stroke-width="7" stroke-linecap="round"/>`
+      + sl('M112,-96 Q170,-120 172,-188') + `<circle cx="172" cy="-200" r="24" fill="${sk}" stroke="${INK}" stroke-width="4.5"/><path d="M158,-206 q14,8 30,0 M158,-194 q14,8 30,0" fill="none" stroke="${INK}" stroke-width="3" stroke-linecap="round"/>`;
+    case 'hold': return sl('M112,-96 Q150,-60 120,-40') + `<circle cx="112" cy="-38" r="22" fill="${sk}" stroke="${INK}" stroke-width="4.5"/>`;
+    default: return '';
+  }
+}
+
+function hijabBack(c) {
+  if (c.drape === 'short') {
+    return `<path d="M-112,-262 C-112,-336 -66,-382 0,-382 C66,-382 112,-336 112,-262 C114,-206 122,-170 116,-140 Q0,-96 -116,-140 C-122,-170 -114,-206 -112,-262Z" fill="${c.hijab}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>
+     <path d="M-92,-160 Q-50,-128 -14,-122 M92,-160 Q50,-128 14,-122" fill="none" stroke="${c.hijabS}" stroke-width="5" stroke-linecap="round"/>`;
+  }
+  const hem = -72;
+  return `<path d="M-112,-262 C-112,-336 -66,-382 0,-382 C66,-382 112,-336 112,-262 C116,-200 140,-160 150,-110 L150,${hem} Q0,${hem + 34} -150,${hem} L-150,-110 C-140,-160 -116,-200 -112,-262Z" fill="${c.hijab}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>
+   <path d="M-96,-150 Q-60,-110 -18,-100 M96,-150 Q60,-110 18,-100" fill="none" stroke="${c.hijabS}" stroke-width="5" stroke-linecap="round"/>`;
+}
+function teacherBody(c, e, o) {
+  const I = `stroke="${INK}" stroke-width="5" stroke-linejoin="round"`;
+  const H = c.hijab, S = c.hijabS;
+  let s = '';
+  // slim blouse (kebaya-cut batik) with center placket and hem band
+  s += `<g transform="scale(1.02,1)"><path d="M-116,0 C-118,-62 -102,-112 -56,-128 L56,-128 C102,-112 118,-62 116,0Z" fill="${c.top}" ${I}/>
+    <rect x="-17" y="-128" width="34" height="128" fill="url(#pBandV)" stroke="${INK}" stroke-width="3.5"/>
+    <rect x="-116" y="-18" width="232" height="18" fill="url(#pZig)"/>
+    <path d="M-116,0 C-118,-62 -102,-112 -56,-128 L56,-128 C102,-112 118,-62 116,0" fill="none" ${I}/>
+    <path d="M-60,-82 C-70,-50 -76,-24 -80,0 M60,-82 C70,-50 76,-24 80,0" fill="none" stroke="#7a1018" stroke-width="3" opacity=".6"/></g>`;
+  // face + pashmina, slightly narrowed for a slimmer, adult look
+  s += `<g transform="scale(1,1)">`;
+  // face skin
+  s += `<path d="M-84,-262 C-86,-322 -46,-348 0,-348 C46,-348 86,-322 84,-262 C88,-210 52,-162 0,-162 C-52,-162 -88,-210 -84,-262Z" fill="${c.skin}"/>`;
+  s += face(c, e, o);
+  // one end of the pashmina falling over the viewer-left shoulder (top tucked under the wrap)
+  s += `<path d="M-74,-170 C-104,-150 -116,-90 -110,-34 C-104,-22 -88,-22 -84,-34 C-88,-80 -82,-120 -60,-146Z" fill="${H}" ${I}/>
+    <path d="M-98,-118 C-102,-90 -100,-62 -97,-42" fill="none" stroke="${S}" stroke-width="3.5" stroke-linecap="round"/>`;
+  // pashmina: hugs the head, narrows at the jaw, then wraps the neck with a diagonal hem (evenodd ring)
+  s += `<path fill-rule="evenodd" d="M-104,-252 C-108,-342 -60,-382 0,-382 C60,-382 108,-342 104,-252 C102,-214 94,-186 90,-168 C104,-152 114,-136 112,-120 C90,-92 22,-76 -28,-82 C-68,-88 -94,-108 -96,-134 C-96,-150 -92,-160 -90,-168 C-96,-188 -102,-216 -104,-252Z
+       M-80,-262 C-80,-312 -44,-336 0,-336 C44,-336 80,-312 80,-262 C82,-212 50,-170 0,-168 C-50,-170 -82,-212 -80,-262Z" fill="${H}" ${I}/>
+    <path d="M-58,-356 Q0,-378 58,-356" fill="none" stroke="${S}" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M-76,-148 C-36,-128 40,-128 96,-146 M-66,-112 C-18,-98 50,-102 104,-124" fill="none" stroke="${S}" stroke-width="4" stroke-linecap="round"/>`;
+  // small gold brooch
+  s += `<circle cx="76" cy="-156" r="8" fill="${C.gold}" stroke="${INK}" stroke-width="2.5"/>`;
+  s += `</g>`;
+  // arms, shifted in for the slimmer shoulders
+  if (o.pose && o.pose !== 'none') s += `<g transform="translate(${o.pose === 'think' ? 18 : -24},0)">${arm(c, o.pose)}</g>`;
+  return s;
+}
+function hijabFront(c) {
+  return `<path d="M-84,-262 C-86,-322 -46,-348 0,-348 C46,-348 86,-322 84,-262 C78,-302 44,-322 0,-322 C-44,-322 -78,-302 -84,-262Z" fill="${c.hijab}" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/>
+   <path d="M-84,-262 C-88,-210 -52,-168 0,-162 C52,-168 88,-210 84,-262" fill="none" stroke="${INK}" stroke-width="5"/>
+   <path d="M-66,-176 Q0,-140 66,-176" fill="none" stroke="${c.hijabS}" stroke-width="5" stroke-linecap="round"/>`;
+}
+
+function hairBack(c) {
+  if (c.kind === 'devi') return `<path d="M-100,-250 C-110,-350 110,-360 102,-250 C110,-180 118,-150 104,-110 L-104,-110 C-118,-150 -110,-190 -100,-250Z" fill="${c.hair}" stroke="${INK}" stroke-width="5"/>
+     <path d="M78,-330 C140,-340 160,-270 136,-200 C130,-250 118,-290 78,-300Z" fill="${c.hair}" stroke="${INK}" stroke-width="4.5"/>`;
+  return '';
+}
+function hairFront(c, opt) {
+  const ink = `stroke="${INK}" stroke-width="5" stroke-linejoin="round"`;
+  switch (c.kind) {
+    case 'soru': {
+      let s = `<path d="M-91,-250 C-92,-330 -52,-358 0,-358 C52,-358 92,-330 91,-250 L80,-250 C78,-290 44,-306 0,-306 C-44,-306 -78,-290 -80,-250Z" fill="${c.hair}" ${ink}/>
+        ${Array.from({ length: 13 }, (_, i) => { const t = -1.15 + i * .19; return `<path d="M${Math.sin(t) * 78},${-300 - Math.cos(t) * 50} l${Math.sin(t) * 6},${-Math.cos(t) * 7}" stroke="#4a3a36" stroke-width="3" stroke-linecap="round"/>`; }).join('')}`;
+      // headband with sorume motif + knot tails
+      s += `<path d="M-90,-298 C-50,-334 50,-334 90,-298 L93,-260 C50,-296 -50,-296 -93,-260Z" fill="url(#pBatikBiru)" ${ink}/>
+            <path d="M-89,-292 C-50,-327 50,-327 89,-292" fill="none" stroke="#fff" stroke-width="2.5" opacity=".9"/>
+            <path d="M-92,-266 C-50,-302 50,-302 92,-266" fill="none" stroke="#1d2f7a" stroke-width="3"/>
+            <path d="M88,-290 C122,-292 146,-262 156,-226 L130,-224 C122,-250 108,-264 88,-268Z" fill="url(#pBatikBiru)" ${ink}/>
+            <path d="M90,-288 C128,-306 156,-304 176,-288 L162,-266 C142,-278 118,-278 92,-268Z" fill="url(#pBatikBiru)" ${ink}/>
+            <ellipse cx="98" cy="-279" rx="13" ry="15" fill="#2b8fd6" stroke="${INK}" stroke-width="4"/>
+            ${sorumeC(98, -279, 11, '#fff', '#e8873a', '#e8873a')}`;
+      return s;
+    }
+    case 'tugu':
+      return `<path d="M-90,-258 C-104,-360 96,-372 92,-262 C78,-312 40,-322 -10,-318 C-40,-300 -70,-290 -90,-258Z" fill="${c.hair}" ${ink}/>
+        <path d="M-10,-318 C20,-300 60,-300 88,-282" fill="none" stroke="#4a3a33" stroke-width="4"/>
+        <g fill="none" stroke="${INK}" stroke-width="5"><circle cx="-32" cy="-255" r="25"/><circle cx="32" cy="-255" r="25"/><path d="M-7,-258 Q0,-264 7,-258 M-57,-258 L-84,-266 M57,-258 L84,-266"/></g>
+        <circle cx="-40" cy="-264" r="5" fill="#fff" opacity=".6"/><circle cx="24" cy="-264" r="5" fill="#fff" opacity=".6"/>`;
+    case 'devi':
+      return `<path d="M-90,-250 C-110,-372 112,-372 92,-250 C70,-300 30,-312 -6,-300 C-30,-288 -60,-282 -90,-250Z" fill="${c.hair}" ${ink}/>
+        <g transform="translate(-70,-318)">${[0, 72, 144, 216, 288].map(a => `<ellipse transform="rotate(${a}) translate(0,-14)" rx="10" ry="16" fill="#fffaf0" stroke="${INK}" stroke-width="3"/>`).join('')}<circle r="9" fill="#f6c443" stroke="${INK}" stroke-width="2.5"/></g>`;
+    case 'oto': {
+      let s = `<path d="M-92,-252 `;
+      const pts = [[-104, -290], [-84, -336], [-44, -362], [0, -368], [44, -362], [84, -336], [104, -290], [92, -252]];
+      let prev = [-92, -252];
+      pts.forEach(p => { s += `Q${(prev[0] + p[0]) / 2 + (p[0] < 0 ? -18 : 18) * 0},${Math.min(prev[1], p[1]) - 22} ${p[0]},${p[1]} `; prev = p; });
+      s += `C70,-300 30,-312 0,-308 C-40,-312 -74,-298 -92,-252Z" fill="${c.hair}" ${ink}/>`;
+      if (opt.goggles === 'eyes') return s;
+      if (opt.goggles !== 'none') s += goggles(0, -318, 1);
+      return s;
+    }
+  }
+  return '';
+}
+
+/* draw a character: who, expression, opts {x,y,s,flip,pose,look,goggles} */
+function ch(who, e = 'smile', o = {}) {
+  const c = CHAR[who];
+  const x = o.x ?? 500, y = o.y ?? 900, s = (o.s ?? 1) * (c.drape === 'pashmina' ? 1.03 : 1), f = o.flip ? -1 : 1;
+  let g = `<g class="char" transform="translate(${x},${y}) scale(${s * f},${s}) ${o.rot ? `rotate(${o.rot})` : ''}">`;
+  if (o.pose === 'think') g += ''; // arm drawn after head
+  if (c.drape === 'pashmina') return g + teacherBody(c, e, o) + `</g>`;
+  if (c.kind === 'hijab') g += hijabBack(c);
+  g += hairBack(c);
+  if (o.swim) g += `<path d="M-50,-10 L-80,180 M50,-10 L92,172" stroke="${INK}" stroke-width="62" stroke-linecap="round"/><path d="M-50,-10 L-80,180 M50,-10 L92,172" stroke="#2b3f63" stroke-width="50" stroke-linecap="round"/>
+     <path d="M-104,-30 L104,-30 L112,40 L-112,40Z" fill="#2b3f63" stroke="${INK}" stroke-width="5"/>
+     <path d="M-66,60 L-76,150 M64,60 L84,146" stroke="#1d2c47" stroke-width="4" stroke-linecap="round"/>
+     <g transform="translate(-84,212) rotate(8)"><path d="M-30,-14 C-30,-34 18,-34 26,-14 L40,4 C40,16 -30,16 -30,4Z" fill="#fff" stroke="${INK}" stroke-width="4.5" stroke-linejoin="round"/><path d="M-30,6 H40" stroke="#cfd3db" stroke-width="5"/></g>
+     <g transform="translate(100,204) rotate(-14) scale(-1,1)"><path d="M-30,-14 C-30,-34 18,-34 26,-14 L40,4 C40,16 -30,16 -30,4Z" fill="#fff" stroke="${INK}" stroke-width="4.5" stroke-linejoin="round"/><path d="M-30,6 H40" stroke="#cfd3db" stroke-width="5"/></g>`;
+  g += torso(o.top ? { ...c, top: o.top } : c, o);
+  if (c.kind === 'hijab') g += hijabBack(c).replace(/<path d="M-96[^>]*>/, ''); // drape over torso
+  if (c.kind !== 'hijab') {
+    g += `<rect x="-26" y="-182" width="52" height="56" fill="${c.skin}" stroke="${INK}" stroke-width="5"/>`;
+    g += `<ellipse cx="-86" cy="-252" rx="15" ry="22" fill="${c.skin}" stroke="${INK}" stroke-width="5"/><ellipse cx="86" cy="-252" rx="15" ry="22" fill="${c.skin}" stroke="${INK}" stroke-width="5"/>`;
+  }
+  if (c.kind === 'hijab') {
+    g += `<path d="M-84,-262 C-86,-322 -46,-348 0,-348 C46,-348 86,-322 84,-262 C88,-210 52,-162 0,-162 C-52,-162 -88,-210 -84,-262Z" fill="${c.skin}"/>`;
+  } else {
+    g += `<path d="M-88,-262 C-88,-330 -50,-352 0,-352 C50,-352 88,-330 88,-262 C90,-200 54,-160 0,-160 C-54,-160 -90,-200 -88,-262Z" fill="${c.skin}" stroke="${INK}" stroke-width="5"/>`;
+  }
+  g += face(c, e, o);
+  if (c.kind === 'hijab') {
+    g += hijabFront(c);
+    if (c.pin) g += sorume(66, -178, 24);
+    else g += `<circle cx="62" cy="-180" r="8" fill="${C.gold}" stroke="${INK}" stroke-width="2.5"/>`;
+  }
+  g += hairFront(c, o);
+  if (who === 'oto' && o.goggles === 'eyes') g += goggles(0, -255, 1.25);
+  if (o.pose && o.pose !== 'none') g += arm(c, o.pose);
+  g += `</g>`;
+  return g;
+}
+
+/* ---------- SCENE PIECES ---------- */
+function rect(w, h, fill) { return `<rect width="${w}" height="${h}" fill="${fill}"/>`; }
+function cloud(x, y, k = 1) {
+  return `<g transform="translate(${x},${y}) scale(${k})" fill="#fff" opacity=".95"><ellipse cx="0" cy="0" rx="60" ry="26"/><ellipse cx="-40" cy="8" rx="40" ry="20"/><ellipse cx="44" cy="8" rx="42" ry="20"/><ellipse cx="6" cy="-18" rx="38" ry="24"/></g>`;
+}
+function hills(h, col1 = '#5c9b5a', col2 = '#3f7d48', base = 0.45) {
+  const y = h * base;
+  return `<path d="M0,${y} C150,${y - 120} 280,${y - 60} 400,${y - 30} C540,${y - 150} 700,${y - 80} 820,${y - 40} C900,${y - 90} 960,${y - 70} 1000,${y - 50} L1000,${y + 80} L0,${y + 80}Z" fill="${col1}"/>
+   <path d="M0,${y + 30} C200,${y - 30} 380,${y + 10} 560,${y - 10} C760,${y - 50} 880,${y + 10} 1000,${y} L1000,${y + 120} L0,${y + 120}Z" fill="${col2}"/>`;
+}
+function palm(x, y, k = 1) {
+  return `<g transform="translate(${x},${y}) scale(${k})"><path d="M0,0 C6,-80 14,-150 30,-210" stroke="#7b5432" stroke-width="14" fill="none" stroke-linecap="round"/>
+   ${[-160, -120, -60, -20, 20].map((a, i) => `<path transform="translate(30,-210) rotate(${a})" d="M0,0 C30,-20 70,-14 100,10 C70,0 30,4 0,0Z" fill="${i % 2 ? '#3f8a3f' : '#2f6f35'}"/>`).join('')}</g>`;
+}
+function log(x, y, w, h = 44, rot = 0) {
+  return `<g transform="translate(${x},${y}) rotate(${rot})"><rect x="0" y="${-h / 2}" width="${w}" height="${h}" rx="${h / 2}" fill="#8a5a33" stroke="${INK}" stroke-width="4"/>
+   <path d="M${h / 2},${-h / 6} L${w - h},${-h / 6} M${h},${h / 6} L${w - h / 2},${h / 6}" stroke="#6b4325" stroke-width="3"/>
+   <ellipse cx="${w - h / 2 + 4}" cy="0" rx="${h / 2.4}" ry="${h / 2 - 2}" fill="#d9a970" stroke="${INK}" stroke-width="4"/>
+   <ellipse cx="${w - h / 2 + 4}" cy="0" rx="${h / 6}" ry="${h / 5}" fill="none" stroke="#9c6b3c" stroke-width="2.5"/></g>`;
+}
+function ripple(x, y, w) { return `<path d="M${x},${y} q${w / 4},-8 ${w / 2},0 t${w / 2},0" fill="none" stroke="#fff" stroke-width="4" opacity=".7" stroke-linecap="round"/>`; }
+function bubbles(x, y, n = 5, k = 1) {
+  let s = ''; for (let i = 0; i < n; i++) s += `<circle cx="${x + Math.sin(i * 2.1) * 14 * k}" cy="${y - i * 30 * k}" r="${(5 + (i % 3) * 3) * k}" fill="none" stroke="#e8fbff" stroke-width="3" opacity=".85"/>`;
+  return s;
+}
+function ferry(x, y, k = 1) {
+  return `<g transform="translate(${x},${y}) scale(${k})">
+   <path d="M-300,0 L300,0 L250,70 L-270,70Z" fill="#1f4f8a" stroke="${INK}" stroke-width="5"/>
+   <path d="M-300,0 L300,0 L292,16 L-294,16Z" fill="#c33" />
+   <rect x="-250" y="-70" width="470" height="70" fill="#fff" stroke="${INK}" stroke-width="5"/>
+   <rect x="-200" y="-130" width="330" height="60" fill="#fff" stroke="${INK}" stroke-width="5"/>
+   <rect x="-120" y="-176" width="140" height="46" fill="#fff" stroke="${INK}" stroke-width="5"/>
+   ${Array.from({ length: 13 }, (_, i) => `<rect x="${-232 + i * 34}" y="-50" width="20" height="16" rx="3" fill="#2d6f9f"/>`).join('')}
+   ${Array.from({ length: 9 }, (_, i) => `<rect x="${-184 + i * 34}" y="-112" width="20" height="16" rx="3" fill="#2d6f9f"/>`).join('')}
+   <rect x="-60" y="-210" width="26" height="36" fill="#d33" stroke="${INK}" stroke-width="4"/>
+   <text x="10" y="40" font-family="Baloo 2, sans-serif" font-weight="800" font-size="30" fill="#fff" text-anchor="middle">KM. ANOA</text>
+  </g>`;
+}
+function mosqueAlAlam(x, y, k = 1) {
+  return `<g transform="translate(${x},${y}) scale(${k})" opacity=".92">
+   ${[-60, -30, 0, 30, 60].map(px => `<rect x="${px - 3}" y="0" width="6" height="40" fill="#8aa0a8"/>`).join('')}
+   <rect x="-70" y="-50" width="140" height="52" fill="#f6f2e8" stroke="#56656b" stroke-width="3"/>
+   <path d="M-46,-50 C-46,-110 46,-110 46,-50Z" fill="#e7c76a" stroke="#56656b" stroke-width="3"/>
+   <rect x="80" y="-120" width="12" height="122" fill="#f6f2e8" stroke="#56656b" stroke-width="3"/><path d="M78,-120 L86,-140 L94,-120Z" fill="#e7c76a"/>
+  </g>`;
+}
+function bridge(y, k = 1) {
+  return `<g opacity=".55" stroke="#4d6470" fill="none" stroke-width="${3 * k}">
+   <path d="M0,${y} L1000,${y}"/>
+   <path d="M330,${y} L360,${y - 120 * k} L390,${y}"/><path d="M610,${y} L640,${y - 120 * k} L670,${y}"/>
+   ${Array.from({ length: 9 }, (_, i) => `<path d="M360,${y - 120 * k} L${180 + i * 22},${y}"/><path d="M640,${y - 120 * k} L${820 - i * 22},${y}"/>`).join('')}
+  </g>`;
+}
+function stiltHouse(x, y, k = 1, roof = '#9c3b2c') {
+  return `<g transform="translate(${x},${y}) scale(${k})">
+   ${[-70, -30, 10, 50, 80].map(px => `<rect x="${px}" y="0" width="8" height="90" fill="#6b4a2c"/>`).join('')}
+   <rect x="-80" y="-80" width="170" height="82" fill="#c9a06a" stroke="${INK}" stroke-width="4"/>
+   ${Array.from({ length: 8 }, (_, i) => `<path d="M${-80 + i * 22},-80 v82" stroke="#a37a47" stroke-width="3"/>`).join('')}
+   <path d="M-100,-80 L5,-150 L110,-80Z" fill="${roof}" stroke="${INK}" stroke-width="4"/>
+   <rect x="-40" y="-56" width="34" height="30" fill="#4b3420"/><rect x="30" y="-56" width="34" height="30" fill="#4b3420"/>
+   <rect x="-90" y="-4" width="190" height="10" fill="#8a6440" stroke="${INK}" stroke-width="3"/>
+  </g>`;
+}
+function boat(x, y, k = 1, col = '#2b7bb9') {
+  return `<g transform="translate(${x},${y}) scale(${k})"><path d="M-130,-20 L130,-20 C120,20 80,30 0,30 C-80,30 -120,20 -130,-20Z" fill="${col}" stroke="${INK}" stroke-width="5"/>
+   <path d="M-130,-20 L130,-20" stroke="#f3d24a" stroke-width="8"/><path d="M-150,-34 L-120,-18 M150,-34 L120,-18" stroke="${INK}" stroke-width="5"/></g>`;
+}
+function car(x, y, k = 1, col = '#d23b3b') {
+  return `<g transform="translate(${x},${y}) scale(${k})">
+   <path d="M-170,-30 L-160,-80 L-90,-90 L-50,-140 L70,-140 L120,-90 L170,-80 L175,-30Z" fill="${col}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>
+   <path d="M-40,-130 L10,-130 L10,-92 L-76,-92Z M24,-130 L64,-130 L100,-92 L24,-92Z" fill="#bfe6f5" stroke="${INK}" stroke-width="4"/>
+   <circle cx="-100" cy="-28" r="34" fill="#2a2a2a" stroke="${INK}" stroke-width="4"/><circle cx="-100" cy="-28" r="14" fill="#bbb"/>
+   <circle cx="110" cy="-28" r="34" fill="#2a2a2a" stroke="${INK}" stroke-width="4"/><circle cx="110" cy="-28" r="14" fill="#bbb"/>
+   <rect x="150" y="-74" width="20" height="12" rx="4" fill="#ffe28a"/></g>`;
+}
+function motor(x, y, k = 1) {
+  return `<g transform="translate(${x},${y}) scale(${k})">
+   <circle cx="-70" cy="-30" r="30" fill="#2a2a2a" stroke="${INK}" stroke-width="4"/><circle cx="70" cy="-30" r="30" fill="#2a2a2a" stroke="${INK}" stroke-width="4"/>
+   <circle cx="-70" cy="-30" r="12" fill="#ccc"/><circle cx="70" cy="-30" r="12" fill="#ccc"/>
+   <path d="M-60,-40 L-20,-80 L50,-80 L70,-30 Z" fill="#e05aa0" stroke="${INK}" stroke-width="4"/>
+   <path d="M-30,-90 L40,-90 L46,-80 L-36,-80Z" fill="#222"/><path d="M50,-80 L66,-120 L84,-122" stroke="${INK}" stroke-width="6" fill="none"/>
+  </g>`;
+}
+function foam(x, y, n = 6) {
+  let s = ''; for (let i = 0; i < n; i++) s += `<circle cx="${x + i * 22 + (i % 2) * 6}" cy="${y - (i % 3) * 10}" r="${12 + (i % 3) * 5}" fill="#fff" stroke="#b9dce8" stroke-width="2"/>`;
+  return s;
+}
+
+/* ---------- SCENES (full backgrounds) ---------- */
+const SCENE = {
+  river(h) {
+    return rect(1000, h, 'url(#gSky)') + cloud(180, 110) + cloud(760, 80, .8) + hills(h, '#6aa865', '#4c8b4f', .42)
+      + `<path d="M0,${h * .55} C300,${h * .5} 700,${h * .6} 1000,${h * .54} L1000,${h} L0,${h}Z" fill="url(#gRiver)"/>`
+      + log(120, h * .62, 260, 46, -3) + log(480, h * .6, 300, 52, 2) + log(320, h * .7, 220, 40, -2)
+      + ripple(100, h * .66, 120) + ripple(600, h * .64, 140) + ripple(420, h * .76, 100)
+      + `<path d="M0,${h * .78} C200,${h * .74} 300,${h * .8} 520,${h * .82} L520,${h} L0,${h}Z" fill="#b99360"/>`
+      + `<path d="M0,${h * .84} C220,${h * .8} 300,${h * .86} 560,${h * .88} L560,${h} L0,${h}Z" fill="#9c7a4c"/>`;
+  },
+  riverClose(h) {
+    const w = h * .42;
+    return rect(1000, h, '#cfeaf4') + `<rect y="${w}" width="1000" height="${h - w}" fill="url(#gRiver)"/>`
+      + `<path d="M0,${w} q60,-10 120,0 t120,0 t120,0 t120,0 t120,0 t120,0 t120,0 t120,0 t120,0" fill="none" stroke="#fff" stroke-width="5"/>`
+      + log(480, w + 4, 420, 70, 0)
+      + `<g transform="translate(260,${h * .8}) rotate(25)"><circle r="22" fill="none" stroke="#7d8790" stroke-width="9"/><rect x="18" y="-8" width="70" height="16" rx="4" fill="#9aa4ad" stroke="${INK}" stroke-width="3"/><rect x="60" y="8" width="10" height="12" fill="#9aa4ad"/><rect x="76" y="8" width="10" height="16" fill="#9aa4ad"/></g>`
+      + bubbles(270, h * .72, 5, 1.1)
+      + `<path d="M230,${w + 4} l-30,-40 M270,${w} l0,-55 M310,${w + 4} l30,-40" stroke="#fff" stroke-width="7" stroke-linecap="round"/>`;
+  },
+  port(h) {
+    return rect(1000, h, 'url(#gDusk)') + `<circle cx="820" cy="${h * .22}" r="54" fill="#ffe7a6"/>`
+      + `<path d="M0,${h * .4} C200,${h * .3} 420,${h * .36} 600,${h * .34} C780,${h * .3} 900,${h * .36} 1000,${h * .34} L1000,${h * .44} L0,${h * .44}Z" fill="#6d8a7a"/>`
+      + bridge(h * .43, .8)
+      + `<rect y="${h * .44}" width="1000" height="${h * .56}" fill="url(#gSea)"/>`
+      + mosqueAlAlam(130, h * .42, .55)
+      + ferry(560, h * .58, .95)
+      + ripple(80, h * .7, 160) + ripple(700, h * .74, 180) + ripple(300, h * .8, 140)
+      + `<rect y="${h * .84}" width="1000" height="${h * .16}" fill="#a7a39a" stroke="${INK}" stroke-width="5"/>`
+      + Array.from({ length: 6 }, (_, i) => `<rect x="${60 + i * 180}" y="${h * .82}" width="30" height="24" rx="4" fill="#ffd34d" stroke="${INK}" stroke-width="3"/>`).join('');
+  },
+  classroom(h) {
+    return rect(1000, h, '#f2e6cf')
+      + `<rect y="${h * .74}" width="1000" height="${h * .26}" fill="#c99a62"/>`
+      + `<rect x="110" y="${h * .1}" width="560" height="${h * .42}" rx="8" fill="#fbfdfc" stroke="#7b8a86" stroke-width="12"/>`
+      + `<text x="140" y="${h * .17}" font-family="Comic Neue, sans-serif" font-weight="700" font-size="34" fill="#2b5c9e">FLUIDA STATIS</text>`
+      + `<path d="M140,${h * .2} L420,${h * .2}" stroke="#2b5c9e" stroke-width="4"/>`
+      + `<rect x="760" y="${h * .08}" width="190" height="${h * .3}" fill="#bfe6f5" stroke="#8a6a46" stroke-width="10"/><path d="M855,${h * .08} v${h * .3} M760,${h * .23} h190" stroke="#8a6a46" stroke-width="7"/>`
+      + `<rect x="740" y="${h * .42}" width="220" height="40" fill="url(#pSorumeS)" stroke="${INK}" stroke-width="3"/>`
+      + `<text x="850" y="${h * .42 + 28}" text-anchor="middle" font-family="Baloo 2, sans-serif" font-weight="800" font-size="22" fill="${C.cream}">XI IPA 2</text>`;
+  },
+  board(h) {
+    return rect(1000, h, '#e9dcc0') + `<rect x="24" y="24" width="952" height="${h - 48}" rx="10" fill="#fdfefd" stroke="#7b8a86" stroke-width="14"/>`;
+  },
+  bajo(h) {
+    return rect(1000, h, 'url(#gSky)') + cloud(820, 90, .9) + cloud(300, 60, .6)
+      + `<rect y="${h * .5}" width="1000" height="${h * .5}" fill="url(#gSea)"/>`
+      + stiltHouse(150, h * .42, .9) + stiltHouse(420, h * .4, .7, '#2f6f8f') + stiltHouse(880, h * .44, 1, '#8a6a3a')
+      + boat(620, h * .66, 1, '#e2a83b')
+      + ripple(80, h * .74, 160) + ripple(720, h * .82, 180) + ripple(340, h * .9, 140);
+  },
+  bajoWide(h) {
+    let s = rect(1000, h, 'url(#gSky)') + cloud(760, h * .14, .8) + cloud(420, h * .1, .5)
+      + `<path d="M0,${h * .42} C200,${h * .3} 380,${h * .38} 560,${h * .34} C760,${h * .3} 900,${h * .36} 1000,${h * .33} L1000,${h * .46} L0,${h * .46}Z" fill="#6aa865"/>`
+      + `<rect y="${h * .46}" width="1000" height="${h * .54}" fill="url(#gSea)"/>`;
+    s += stiltHouse(110, h * .58, .8) + stiltHouse(330, h * .55, .7, '#2f6f8f') + stiltHouse(560, h * .57, .85, '#8a6a3a') + stiltHouse(800, h * .54, .72, '#9c3b2c') + stiltHouse(950, h * .58, .7, '#2f6f8f');
+    s += `<path d="M180,${h * .6} L270,${h * .6} M410,${h * .6} L470,${h * .6} M650,${h * .6} L740,${h * .6}" stroke="#8a6440" stroke-width="10"/>`;
+    s += boat(260, h * .84, .8, '#e2a83b') + boat(720, h * .88, .7, '#2b7bb9');
+    s += ripple(60, h * .76, 160) + ripple(460, h * .8, 160) + ripple(820, h * .76, 140) + ripple(380, h * .94, 160);
+    return s;
+  },
+  dive(h) {
+    let s = rect(1000, h, 'url(#gDeep)');
+    s += `<path d="M0,${h * .06} q50,-12 100,0 t100,0 t100,0 t100,0 t100,0 t100,0 t100,0 t100,0 t100,0 t100,0" fill="none" stroke="#e8fbff" stroke-width="5"/>`;
+    for (let i = 0; i < 6; i++) s += `<path d="M${120 + i * 150},0 L${60 + i * 160},${h * .7}" stroke="#fff" stroke-width="26" opacity=".06"/>`;
+    s += `<path d="M0,${h * .9} C150,${h * .84} 300,${h * .92} 500,${h * .88} C700,${h * .84} 850,${h * .92} 1000,${h * .87} L1000,${h} L0,${h}Z" fill="#d8c18a"/>`;
+    s += `<g transform="translate(150,${h * .9})"><path d="M0,0 C-10,-60 20,-90 10,-140 M0,0 C30,-40 50,-60 60,-110 M0,0 C-40,-30 -60,-70 -50,-100" stroke="#f07a6a" stroke-width="16" fill="none" stroke-linecap="round"/></g>`;
+    s += `<g transform="translate(860,${h * .9})"><path d="M0,0 C-10,-50 20,-80 10,-120 M0,0 C30,-30 50,-60 46,-90" stroke="#b56ad6" stroke-width="14" fill="none" stroke-linecap="round"/></g>`;
+    // depth scale
+    s += `<g font-family="Baloo 2, sans-serif" font-weight="800" font-size="30" fill="#fff">`;
+    [[.12, '0 m'], [.36, '2 m'], [.6, '5 m'], [.84, '8 m']].forEach(([f, t]) => { s += `<path d="M24,${h * f} h40" stroke="#fff" stroke-width="5"/><text x="72" y="${h * f + 10}">${t}</text>`; });
+    s += `</g>`;
+    return s;
+  },
+  doorsmeer(h) {
+    return rect(1000, h, '#dde4e8')
+      + `<rect width="1000" height="${h * .16}" fill="#2a5b8c"/>`
+      + `<text x="500" y="${h * .11}" text-anchor="middle" font-family="Luckiest Guy, Baloo 2, sans-serif" font-size="${h * .075}" fill="#ffd34d" stroke="${INK}" stroke-width="3" paint-order="stroke" textLength="900" lengthAdjust="spacingAndGlyphs">DOORSMEER CUCI MOTOR &amp; MOBIL</text>`
+      + `<rect x="880" y="${h * .56}" width="70" height="${h * .26}" fill="#5f6b73" stroke="${INK}" stroke-width="4"/><path d="M915,${h * .56} L870,${h * .44}" stroke="${INK}" stroke-width="10" stroke-linecap="round"/><circle cx="868" cy="${h * .44}" r="14" fill="#e23" stroke="${INK}" stroke-width="3"/>`
+      + `<rect y="${h * .82}" width="1000" height="${h * .18}" fill="#8f979c"/>`
+      + `<rect x="430" y="${h * .82}" width="380" height="16" fill="#555"/>`
+      + `<rect x="600" y="${h * .5}" width="40" height="${h * .32}" fill="#c7ccd0" stroke="${INK}" stroke-width="5"/>`
+      + `<rect x="430" y="${h * .48}" width="380" height="22" fill="#f2c230" stroke="${INK}" stroke-width="5"/>`
+      + car(620, h * .48, .95, '#2d6db3')
+      + `<path d="M590,${h * .3} l0,-50 m-14,14 l14,-14 l14,14" stroke="#e23" stroke-width="8" fill="none"/>`
+      + foam(80, h * .8, 8) + motor(200, h * .82, .9)
+      + `<path d="M360,${h * .82} C330,${h * .6} 300,${h * .55} 260,${h * .5}" stroke="#2fb34a" stroke-width="10" fill="none"/>`;
+  },
+  moramo(h) {
+    let s = rect(1000, h, '#cfeedd');
+    s += `<rect width="1000" height="${h * .5}" fill="#4f8f55"/>`;
+    for (let i = 0; i < 5; i++) {
+      const y = h * (.12 + i * .12);
+      s += `<path d="M${120 + i * 40},${y} L${880 - i * 40},${y} L${900 - i * 40},${y + h * .1} L${100 + i * 40},${y + h * .1}Z" fill="#c9b892" stroke="#8a7a58" stroke-width="4"/>`;
+      s += `<path d="M${130 + i * 40},${y + 6} L${870 - i * 40},${y + 6} L${890 - i * 40},${y + h * .1} L${110 + i * 40},${y + h * .1}Z" fill="#e9fbff" opacity=".75"/>`;
+    }
+    s += `<rect y="${h * .66}" width="1000" height="${h * .34}" fill="url(#gFresh)"/>` + ripple(100, h * .74, 160) + ripple(700, h * .78, 160);
+    s += `<path d="M0,0 L0,${h * .7} C40,${h * .5} 30,${h * .2} 90,0Z" fill="#2f6f35"/><path d="M1000,0 L1000,${h * .7} C960,${h * .5} 970,${h * .2} 910,0Z" fill="#2f6f35"/>`;
+    return s;
+  },
+  beach(h) {
+    return rect(1000, h, 'url(#gSky)') + cloud(200, 90) + cloud(700, 130, .7)
+      + `<rect y="${h * .36}" width="1000" height="${h * .64}" fill="url(#gSea)"/>`
+      + `<path d="M620,${h * .36} C760,${h * .3} 900,${h * .34} 1000,${h * .3} L1000,${h * .4} L620,${h * .4}Z" fill="#6aa865"/>`
+      + palm(900, h * .38, .6) + palm(960, h * .4, .5)
+      + ripple(60, h * .5, 160) + ripple(500, h * .58, 200) + ripple(200, h * .82, 160) + ripple(720, h * .9, 160);
+  },
+  phone(h) {
+    return rect(1000, h, '#e0f0e8') + `<rect x="250" y="20" width="500" height="${h - 40}" rx="40" fill="#121418" stroke="${INK}" stroke-width="6"/>`
+      + `<rect x="270" y="70" width="460" height="${h - 130}" rx="16" fill="#efe7da"/>`
+      + `<rect x="270" y="70" width="460" height="70" fill="#1f6f5c"/>`
+      + `<text x="300" y="116" font-family="Baloo 2, sans-serif" font-weight="800" font-size="30" fill="#fff">Lima Sekawan Sorume 🌼</text>`;
+  },
+  burst(h) {
+    let s = rect(1000, h, 'url(#gBurst)');
+    for (let i = 0; i < 24; i++) { const a = i * 15 * Math.PI / 180; s += `<path d="M500,${h / 2} L${500 + Math.cos(a) * 900},${h / 2 + Math.sin(a) * 900} L${500 + Math.cos(a + .1) * 900},${h / 2 + Math.sin(a + .1) * 900}Z" fill="#fff" opacity=".35"/>`; }
+    return s;
+  },
+};
+
+/* ---------- WHITEBOARD DIAGRAMS ---------- */
+const T = (x, y, t, size = 40, col = '#1e3f78', anchor = 'start', w = 700) => `<text x="${x}" y="${y}" font-family="Comic Neue, sans-serif" font-weight="700" font-size="${size}" fill="${col}" text-anchor="${anchor}">${t}</text>`;
+function coconut(x, y) {
+  return `<g transform="translate(${x},${y})"><ellipse rx="40" ry="36" fill="#6b4a1f" stroke="${INK}" stroke-width="4"/><path d="M-26,-18 q10,-10 22,-6 M4,-26 q12,2 20,12" stroke="#a37a47" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="-8" cy="6" r="4" fill="#2a1a0b"/><circle cx="8" cy="6" r="4" fill="#2a1a0b"/><circle cx="0" cy="18" r="4" fill="#2a1a0b"/></g>`;
+}
+function fish(x, y, k = 1) {
+  return `<g transform="translate(${x},${y}) scale(${k})"><path d="M-46,0 C-30,-30 24,-30 40,0 C24,30 -30,30 -46,0Z" fill="#f28c38" stroke="${INK}" stroke-width="4"/>
+    <path d="M38,0 L66,-22 L62,0 L66,22Z" fill="#f2b138" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M-6,-20 C0,-34 14,-34 20,-20" fill="#f2b138" stroke="${INK}" stroke-width="3.5"/>
+    <path d="M0,-18 C6,-6 6,6 0,18 M14,-16 C20,-6 20,6 14,16" stroke="#fff" stroke-width="5" fill="none"/>
+    <circle cx="-28" cy="-6" r="6" fill="#fff" stroke="${INK}" stroke-width="2.5"/><circle cx="-29" cy="-6" r="3" fill="${INK}"/></g>`;
+}
+function anchor(x, y) {
+  return `<g transform="translate(${x},${y})" fill="none" stroke-linecap="round"><g stroke="${INK}" stroke-width="15"><circle cx="0" cy="-74" r="11"/><path d="M0,-62 V0 M-24,-46 H24 M-38,-22 C-34,4 34,4 38,-22"/></g>
+    <g stroke="#7d8790" stroke-width="8"><circle cx="0" cy="-74" r="11"/><path d="M0,-62 V0 M-24,-46 H24 M-38,-22 C-34,4 34,4 38,-22"/></g></g>`;
+}
+function submarine(x, y) {
+  return `<g transform="translate(${x},${y})">
+    <path d="M10,-26 v-26 h18" fill="none" stroke="${INK}" stroke-width="5"/>
+    <rect x="-18" y="-40" width="40" height="22" rx="6" fill="#f2c230" stroke="${INK}" stroke-width="4"/>
+    <path d="M-70,0 C-70,-26 -40,-26 0,-26 C46,-26 70,-18 70,0 C70,18 46,26 0,26 C-40,26 -70,26 -70,0Z" fill="#f2c230" stroke="${INK}" stroke-width="4"/>
+    <path d="M-70,-16 L-86,-24 L-86,24 L-70,16Z" fill="#e0a92a" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/>
+    ${[-34, -4, 26].map(px => `<circle cx="${px}" cy="0" r="9" fill="#bfe6f5" stroke="${INK}" stroke-width="3.5"/>`).join('')}
+  </g>`;
+}
+function tire(x, y) {
+  return `<g transform="translate(${x},${y})">
+    <circle r="46" fill="#2b2b2e" stroke="${INK}" stroke-width="4"/>
+    ${Array.from({ length: 16 }, (_, i) => `<path transform="rotate(${i * 22.5})" d="M0,-46 v9" stroke="#55555c" stroke-width="5"/>`).join('')}
+    <circle r="27" fill="#4a4a50" stroke="${INK}" stroke-width="3"/>
+    <circle r="15" fill="#8fd4ec" stroke="${INK}" stroke-width="3"/>
+  </g>`;
+}
+function beaker(x, y, label, obj, upY, downY, rel, ex) {
+  return `<g transform="translate(${x},${y})">
+    <path d="M-110,-220 L-110,0 Q-110,14 -96,14 L96,14 Q110,14 110,0 L110,-220" fill="none" stroke="#3b4a50" stroke-width="6"/>
+    <rect x="-106" y="-160" width="212" height="170" fill="#8fd4ec" opacity=".75"/>
+    <path d="M-106,-160 q26,-8 53,0 t53,0 t53,0 t53,0" fill="none" stroke="#fff" stroke-width="4"/>
+    ${obj}
+    <path d="M80,${upY} v-44 m-11,13 l11,-13 l11,13" stroke="#1b8a3c" stroke-width="6" fill="none"/>
+    <path d="M80,${downY} v44 m-11,-13 l11,13 l11,-13" stroke="#d2342c" stroke-width="6" fill="none"/>
+    ${T(0, 66, label, 34, '#1d1416', 'middle')}
+    ${T(0, 108, rel, 32, '#c0392b', 'middle')}
+    ${T(0, 146, ex, 26, '#555', 'middle')}
+  </g>`;
+}
+const BOARD = {
+  rho(h) {
+    return T(70, 120, 'MASSA JENIS', 52, '#c0392b') +
+      `<rect x="70" y="160" width="300" height="190" rx="16" fill="#fff8d6" stroke="#1e3f78" stroke-width="5"/>` +
+      T(220, 290, 'ρ = m / V', 62, '#1e3f78', 'middle') +
+      T(420, 210, 'ρ = massa jenis (kg/m³)', 34, '#333') +
+      T(420, 264, 'm = massa (kg)', 34, '#333') +
+      T(420, 318, 'V = volume (m³)', 34, '#333') +
+      T(70, 420, 'Volume sama, massa makin besar → ρ makin besar', 34, '#1b7a3c') +
+      // evidence 1: wood under a microscope
+      `<clipPath id="cpMic"><circle cx="230" cy="590" r="112"/></clipPath>
+       <g clip-path="url(#cpMic)"><rect x="110" y="470" width="240" height="240" fill="#f4dfb8"/>
+       ${Array.from({ length: 42 }, (_, k) => { const r = Math.floor(k / 7), c = k % 7; const cx = 130 + c * 34 + (r % 2) * 17, cy = 490 + r * 32; return `<path d="M${cx},${cy - 17} l14,8 v18 l-14,8 l-14,-8 v-18Z" fill="#fffaf0" stroke="#9b6a3c" stroke-width="6"/>`; }).join('')}</g>
+       <circle cx="230" cy="590" r="112" fill="none" stroke="#3b4a50" stroke-width="10"/>
+       <path d="M310,670 L360,720" stroke="#3b4a50" stroke-width="16" stroke-linecap="round"/>` +
+      T(230, 455, 'Kayu di bawah mikroskop', 26, '#333', 'middle') +
+      `<path d="M352,560 L300,580" stroke="#c0392b" stroke-width="4"/>` + T(358, 556, 'rongga', 26, '#c0392b') + T(358, 584, 'berisi udara', 26, '#c0392b') +
+      // evidence 2: same-size cubes on a hanging-pan balance; the iron side drops
+      (() => {
+        const M = '#3b3f46', Ml = '#6b717b', px = 715, py = 524, L = 140, ang = 13 * Math.PI / 180;
+        const lx = px - L * Math.cos(ang), ly = py + L * Math.sin(ang), rx = px + L * Math.cos(ang), ry = py - L * Math.sin(ang);
+        const pan = (x, y) => `<path d="M${x - 62},${y} Q${x},${y + 30} ${x + 62},${y}Z" fill="${M}" stroke="${INK}" stroke-width="3"/><ellipse cx="${x}" cy="${y}" rx="62" ry="7" fill="${Ml}" stroke="${INK}" stroke-width="3"/>`;
+        const chains = (x, y, py2) => `<path d="M${x},${y + 8} L${x - 58},${py2} M${x},${y + 8} L${x + 58},${py2} M${x},${y + 8} L${x},${py2 - 4}" stroke="${M}" stroke-width="2.5" stroke-dasharray="5 3"/>`;
+        const cube = (x, y, f1, f2, f3) => `<rect x="${x - 32}" y="${y - 64}" width="56" height="56" fill="${f1}" stroke="${INK}" stroke-width="3.5"/><path d="M${x - 32},${y - 64} l10,-9 h56 l-10,9Z M${x + 24},${y - 64} l10,-9 v56 l-10,9Z" fill="${f2}" stroke="${INK}" stroke-width="3.5" stroke-linejoin="round"/>${f3}`;
+        const lp = ly + 112, rp = ry + 112;
+        let g = '';
+        g += `<ellipse cx="${px}" cy="712" rx="78" ry="12" fill="${M}" stroke="${INK}" stroke-width="3"/><rect x="${px - 54}" y="694" width="108" height="18" rx="6" fill="${M}" stroke="${INK}" stroke-width="3"/>`;
+        g += `<path d="M${px - 9},694 C${px - 9},640 ${px - 15},600 ${px - 7},${py}  L${px + 7},${py} C${px + 15},600 ${px + 9},640 ${px + 9},694Z" fill="${M}" stroke="${INK}" stroke-width="3"/>`;
+        g += `<path d="M${px},${py - 46} C${px + 10},${py - 30} ${px + 10},${py - 20} ${px},${py - 14} C${px - 10},${py - 20} ${px - 10},${py - 30} ${px},${py - 46}Z" fill="${M}" stroke="${INK}" stroke-width="3"/>`;
+        g += chains(lx, ly, lp) + chains(rx, ry, rp);
+        g += `<path d="M${lx},${ly} Q${px - 80},${py - 4 + 18} ${px},${py} Q${px + 80},${py - 4 - 18} ${rx},${ry}" fill="none" stroke="${INK}" stroke-width="12" stroke-linecap="round"/><path d="M${lx},${ly} Q${px - 80},${py - 4 + 18} ${px},${py} Q${px + 80},${py - 4 - 18} ${rx},${ry}" fill="none" stroke="${M}" stroke-width="7" stroke-linecap="round"/>`;
+        g += `<circle cx="${lx}" cy="${ly}" r="7" fill="${Ml}" stroke="${INK}" stroke-width="3"/><circle cx="${rx}" cy="${ry}" r="7" fill="${Ml}" stroke="${INK}" stroke-width="3"/><circle cx="${px}" cy="${py}" r="9" fill="${Ml}" stroke="${INK}" stroke-width="3"/>`;
+        g += cube(lx, lp, '#8d949b', '#aab1b8', '') + pan(lx, lp);
+        g += cube(rx, rp, '#b8854f', '#d4a46b', `<path d="M${rx - 28},${rp - 46} q24,-6 48,0 M${rx - 28},${rp - 26} q24,6 48,0" stroke="#8a5a2b" stroke-width="2.5" fill="none"/>`) + pan(rx, rp);
+        g += T(lx, lp + 46, 'besi 7,9 kg', 24, '#333', 'middle') + T(rx, rp + 46, 'kayu ± 0,6 kg', 24, '#333', 'middle');
+        return T(715, 452, 'Kubus sama besar (10 cm)', 26, '#333', 'middle') + g;
+      })();
+  },
+  table(h) {
+    const rows = [['Air (tawar)', '1.000'], ['Air laut', '± 1.025'], ['Besi', '7.900'], ['Aluminium', '2.700'], ['Es', '920'], ['Alkohol', '800'], ['Kayu kering*', '± 400–800']];
+    let s = T(500, 110, 'Massa jenis beberapa zat (kg/m³)', 42, '#c0392b', 'middle');
+    rows.forEach(([a, b], i) => {
+      const y = 170 + i * 70;
+      const hl = a === 'Besi' || a.startsWith('Kayu') || a.startsWith('Air (');
+      s += `<rect x="180" y="${y - 46}" width="640" height="62" fill="${hl ? '#fff3c4' : (i % 2 ? '#f1f7fb' : '#fff')}" stroke="#9fb3bf" stroke-width="2"/>`;
+      s += T(210, y, a, 36, '#1d1416') + T(790, y, b, 36, '#1e3f78', 'end');
+    });
+    s += T(500, 170 + rows.length * 70 + 10, '*bergantung jenis kayu', 26, '#666', 'middle');
+    return s;
+  },
+  beakers(h) {
+    return T(500, 100, 'Tiga keadaan benda dalam zat cair', 44, '#c0392b', 'middle')
+      + beaker(190, 430, 'TERAPUNG', log(-92, -164, 160, 50), -214, -122, 'ρb < ρf', 'kayu, kapal, kelapa')
+      + beaker(500, 430, 'MELAYANG', submarine(-6, -82), -124, -40, 'ρb = ρf', 'kapal selam, ikan')
+      + beaker(810, 430, 'TENGGELAM', tire(-26, -44), -100, -40, 'ρb > ρf', 'ban bekas, batu, besi')
+      + T(500, 680, 'panah hijau = gaya apung · merah = berat', 30, '#555', 'middle');
+  },
+  ship(h) {
+    return T(70, 100, 'Rahasia kapal besi', 46, '#c0392b')
+      + `<rect x="60" y="300" width="880" height="200" fill="#8fd4ec" opacity=".7"/>`
+      + `<path d="M180,240 L820,240 L740,380 L260,380Z" fill="#7d8790" stroke="${INK}" stroke-width="6"/>`
+      + `<path d="M220,252 L780,252 L716,362 L284,362Z" fill="#fff" stroke="#7d8790" stroke-dasharray="10 8" stroke-width="4"/>`
+      + T(500, 320, 'ruang berisi UDARA', 38, '#1e3f78', 'middle')
+      + `<path d="M500,520 v-110 m-18,26 l18,-26 l18,26" stroke="#1b8a3c" stroke-width="8" fill="none"/>`
+      + T(70, 600, 'ρ rata-rata kapal = m kapal / V total (besi + udara)', 32, '#333')
+      + T(70, 660, 'ρ rata-rata kapal  <  ρ air laut  →  TERAPUNG', 38, '#1b7a3c');
+  },
+  pressure(h) {
+    return T(70, 110, 'TEKANAN HIDROSTATIS', 50, '#c0392b')
+      + `<rect x="70" y="150" width="340" height="150" rx="16" fill="#fff8d6" stroke="#1e3f78" stroke-width="5"/>` + T(240, 248, 'Ph = ρ g h', 58, '#1e3f78', 'middle')
+      + T(70, 370, 'Ph = tekanan hidrostatis (Pa)', 32, '#333') + T(70, 418, 'ρ = massa jenis zat cair (kg/m³)', 32, '#333')
+      + T(70, 466, 'g = percepatan gravitasi (m/s²)', 32, '#333') + T(70, 514, 'h = kedalaman dari permukaan (m)', 32, '#333')
+      + `<g transform="translate(720,140)"><rect x="0" y="0" width="200" height="460" fill="#8fd4ec" opacity=".55" stroke="#3b4a50" stroke-width="5"/>
+          ${[80, 200, 330].map((y, i) => `<circle cx="100" cy="${y}" r="12" fill="${INK}"/>${[0, 90, 180, 270].map(a => `<path transform="translate(100,${y}) rotate(${a})" d="M${18},0 h${22 + i * 14} m-10,-8 l10,8 l-10,8" stroke="#c0392b" stroke-width="5" fill="none"/>`).join('')}`).join('')}
+          ${T(100, 520, 'makin dalam,', 28, '#333', 'middle')}${T(100, 556, 'makin besar', 28, '#333', 'middle')}</g>`;
+  },
+  bottle(h) {
+    let s = T(70, 100, 'Botol plastik berlubang tiga', 46, '#c0392b');
+    s += `<g transform="translate(250,120)">
+       <rect x="62" y="0" width="56" height="34" rx="6" fill="#2b7bd0" stroke="${INK}" stroke-width="4"/>
+       <path d="M58,40 h64" stroke="${INK}" stroke-width="4"/>
+       <path d="M68,40 C68,80 10,96 10,150 L10,560 Q10,590 40,590 L140,590 Q170,590 170,560 L170,150 C170,96 112,80 112,40Z" fill="#e7f6fc" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>
+       <path d="M14,112 C30,104 150,104 166,112 L166,560 Q166,586 140,586 L40,586 Q14,586 14,560Z" fill="#8fd4ec" opacity=".85"/>
+       <path d="M14,112 C30,104 150,104 166,112" fill="none" stroke="#fff" stroke-width="4"/>
+       ${[200, 380, 470].map(y => `<path d="M12,${y} h156" stroke="#bfe3f2" stroke-width="5"/>`).join('')}
+       <rect x="12" y="250" width="156" height="90" fill="#fff" stroke="${INK}" stroke-width="3"/>
+       <path d="M24,300 q20,-14 40,0 t40,0 t40,0" fill="none" stroke="#2b7bd0" stroke-width="6"/>
+       <text x="90" y="284" text-anchor="middle" font-family="Baloo 2, sans-serif" font-weight="800" font-size="26" fill="#2b7bd0">AIR</text>
+       <path d="M40,130 C34,240 34,420 40,560" stroke="#fff" stroke-width="8" opacity=".55" fill="none" stroke-linecap="round"/>`;
+    [[180, 50], [340, 95], [490, 140]].forEach(([y, d]) => {
+      s += `<circle cx="170" cy="${y}" r="8" fill="${INK}"/><path d="M178,${y} Q${178 + d * .9},${y} ${178 + d * 1.25},${y + 90}" stroke="#2b8fd0" stroke-width="12" fill="none" stroke-linecap="round"/>`;
+    });
+    s += `</g>` + T(600, 320, 'atas: lemah', 32, '#333') + T(600, 480, 'tengah: sedang', 32, '#333') + T(600, 640, 'bawah: paling deras', 32, '#1b7a3c');
+    return s;
+  },
+  pascal(h) {
+    return T(70, 100, 'HUKUM PASCAL', 50, '#c0392b')
+      + `<g transform="translate(90,170)">
+         <path d="M0,320 L0,120 L80,120 L80,280 L460,280 L460,120 L740,120 L740,320Z" fill="#f2c230" opacity=".85" stroke="#3b4a50" stroke-width="6"/>
+         <rect x="6" y="90" width="68" height="30" fill="#7d8790" stroke="${INK}" stroke-width="4"/>
+         <path d="M40,0 v80 m-14,-18 l14,18 l14,-18" stroke="#d2342c" stroke-width="8" fill="none"/>
+         ${T(64, 30, 'F₁', 40, '#d2342c')}${T(10, 370, 'A₁ kecil', 30, '#333')}
+         <rect x="466" y="90" width="268" height="30" fill="#7d8790" stroke="${INK}" stroke-width="4"/>
+         <g transform="translate(600,90) scale(.5)">${car(0, 0, 1, '#2d6db3')}</g>
+         <path d="M600,-4 v-70 m-16,18 l16,-18 l16,18" stroke="#1b8a3c" stroke-width="8" fill="none"/>
+         ${T(630, -40, 'F₂', 40, '#1b8a3c')}${T(560, 370, 'A₂ besar', 30, '#333')}
+       </g>`
+      + `<rect x="80" y="590" width="840" height="110" rx="16" fill="#fff8d6" stroke="#1e3f78" stroke-width="5"/>`
+      + T(500, 662, 'P₁ = P₂   →   F₁/A₁ = F₂/A₂   →   F₂ = (A₂/A₁)·F₁', 38, '#1e3f78', 'middle');
+  },
+  syringe(h) {
+    return T(70, 96, 'Percobaan dua alat suntik', 46, '#c0392b')
+      + `<g transform="translate(140,250)">
+          <rect x="0" y="0" width="70" height="300" fill="#e9f6fb" stroke="#3b4a50" stroke-width="5"/><rect x="5" y="150" width="60" height="146" fill="#8fd4ec"/>
+          <rect x="10" y="100" width="50" height="50" fill="#555"/><rect x="28" y="-40" width="14" height="140" fill="#555"/><rect x="5" y="-50" width="60" height="14" fill="#555"/>
+          <path d="M35,-110 v50 m-12,-14 l12,14 l12,-14" stroke="#d2342c" stroke-width="7" fill="none"/>
+          <path d="M35,300 C35,400 600,400 600,300" stroke="#8fd4ec" stroke-width="18" fill="none"/><path d="M35,300 C35,400 600,400 600,300" stroke="#3b4a50" stroke-width="3" fill="none"/>
+          <rect x="520" y="60" width="160" height="240" fill="#e9f6fb" stroke="#3b4a50" stroke-width="5"/><rect x="525" y="110" width="150" height="186" fill="#8fd4ec"/>
+          <rect x="530" y="70" width="140" height="40" fill="#555"/><rect x="590" y="-10" width="20" height="80" fill="#555"/><rect x="545" y="-40" width="110" height="30" fill="#c0392b" stroke="${INK}" stroke-width="3"/>
+          ${T(600, -56, 'beban', 30, '#333', 'middle')}
+          <path d="M700,40 v-60 m-14,16 l14,-16 l14,16" stroke="#1b8a3c" stroke-width="7" fill="none"/>
+          ${T(90, 140, 'suntik A', 30, '#333')}${T(500, 200, 'suntik B', 30, '#333', 'end')}
+        </g>`;
+  },
+  arch(h) {
+    return T(70, 100, 'HUKUM ARCHIMEDES', 50, '#c0392b')
+      + `<rect x="70" y="130" width="860" height="150" rx="16" fill="#fff8d6" stroke="#1e3f78" stroke-width="5"/>`
+      + T(500, 192, 'Benda yang tercelup dalam fluida mendapat gaya', 30, '#333', 'middle')
+      + T(500, 240, 'ke atas sebesar berat fluida yang dipindahkannya.', 30, '#333', 'middle')
+      + T(500, 370, 'FA = ρf · Vbf · g', 62, '#1e3f78', 'middle')
+      + T(120, 450, 'FA = gaya apung (N)', 32, '#333') + T(120, 496, 'ρf = massa jenis fluida (kg/m³)', 32, '#333')
+      + T(120, 542, 'Vbf = volume benda yang tercelup (m³)', 32, '#333') + T(120, 588, 'g = 10 m/s²', 32, '#333')
+      + T(120, 660, 'ρ laut (± 1.025) > ρ tawar (1.000) → FA laut lebih besar', 30, '#1b7a3c');
+  },
+  scale(h) {
+    const pig = (x, y, wet) => {
+      const k = 1.45, sk = CHAR.tugu.skin;
+      const sleeve = (d) => `<path d="${d}" fill="none" stroke="${INK}" stroke-width="${24 * k}" stroke-linecap="round"/><path d="${d}" fill="none" stroke="url(#pBatikBiruL)" stroke-width="${17 * k}" stroke-linecap="round"/>`;
+      const P = (dx, dy) => `${x + dx * k},${y + dy * k}`;
+      let g = ch('tugu', wet ? 'happy' : 'surprise', { x: x - 62 * k, y: y - 66 * k, s: .5 * k });
+      g += `<ellipse cx="${x - 96 * k}" cy="${y - 34 * k}" rx="${24 * k}" ry="${18 * k}" fill="#8d8f96" stroke="${INK}" stroke-width="4"/><ellipse cx="${x + 108 * k}" cy="${y - 34 * k}" rx="${24 * k}" ry="${18 * k}" fill="#8d8f96" stroke="${INK}" stroke-width="4"/>`;
+      g += ch('soru', wet ? 'grin' : 'wince', { x: x + 14 * k, y, s: .56 * k });
+      g += sleeve(`M${P(-94, -90)} Q${P(-52, -84)} ${P(-12, -56)}`) + `<circle cx="${x - 6 * k}" cy="${y - 52 * k}" r="${10 * k}" fill="${sk}" stroke="${INK}" stroke-width="3.5"/>`;
+      g += sleeve(`M${P(78, -100)} Q${P(70, -76)} ${P(38, -58)}`) + `<circle cx="${x + 30 * k}" cy="${y - 54 * k}" r="${10 * k}" fill="${sk}" stroke="${INK}" stroke-width="3.5"/>`;
+      return g;
+    };
+    let s = T(500, 92, 'Menggendong teman: di darat vs di air', 40, '#c0392b', 'middle');
+    // left: on land
+    s += `<clipPath id="cpL"><rect x="60" y="120" width="420" height="470" rx="10"/></clipPath><clipPath id="cpR"><rect x="520" y="120" width="420" height="470" rx="10"/></clipPath>`;
+    s += `<g clip-path="url(#cpL)"><rect x="60" y="120" width="420" height="470" fill="#e6f4fb"/><rect x="60" y="520" width="420" height="70" fill="#d8c18a"/>${pig(290, 650, false)}
+      <path d="M110,150 v110 m-20,-26 l20,26 l20,-26" stroke="#d2342c" stroke-width="12" fill="none"/></g>`;
+    s += `<g clip-path="url(#cpR)"><rect x="520" y="120" width="420" height="470" fill="#e6f4fb"/>${pig(750, 650, true)}
+      <rect x="520" y="548" width="420" height="47" fill="#3a9fd0" opacity=".6"/><path d="M520,548 q26,-10 52,0 t52,0 t52,0 t52,0 t52,0 t52,0 t52,0 t52,0" fill="none" stroke="#fff" stroke-width="5"/>
+      <path d="M570,170 v50 m-14,-16 l14,16 l14,-16" stroke="#d2342c" stroke-width="10" fill="none"/>
+      <path d="M916,585 v-110 m-18,24 l18,-24 l18,24" stroke="#1b8a3c" stroke-width="12" fill="none"/></g>`;
+    s += `<rect x="60" y="120" width="420" height="470" rx="10" fill="none" stroke="#3b4a50" stroke-width="5"/><rect x="520" y="120" width="420" height="470" rx="10" fill="none" stroke="#3b4a50" stroke-width="5"/>`;
+    s += T(270, 630, 'Di darat: terasa BERAT', 32, '#c0392b', 'middle') + T(730, 630, 'Di air: terasa RINGAN', 32, '#1b7a3c', 'middle');
+    s += T(500, 690, 'panah hijau = gaya apung dari air · panah merah = berat', 26, '#555', 'middle');
+    return s;
+  },
+};
+
+/* sorume decorative band (zigzag + flowers) for page UI */
+function bandSVG(w = 1200) {
+  let s = `<svg viewBox="0 0 ${w} 60" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"><rect width="${w}" height="60" fill="${C.maroon}"/><rect y="0" width="${w}" height="16" fill="url(#pZig)"/><rect y="44" width="${w}" height="16" fill="url(#pZig)" transform="translate(0,104) scale(1,-1)"/>`;
+  for (let x = 30; x < w; x += 60) s += (x / 60 | 0) % 2 ? crossX(x, 30, 7, C.cream, 3) : sorume(x, 30, 12);
+  return s + '</svg>';
+}
+/* ===== Extra art for "Jejak Energi": gudang kakao, lintasan, papan usaha-energi-daya ===== */
+function arrowP(x1, y1, x2, y2, col = '#c0392b', w = 7) {
+  const a = Math.atan2(y2 - y1, x2 - x1), h = w * 2.6;
+  return `<path d="M${x1},${y1} L${x2},${y2} M${x2 - h * Math.cos(a - .5)},${y2 - h * Math.sin(a - .5)} L${x2},${y2} L${x2 - h * Math.cos(a + .5)},${y2 - h * Math.sin(a + .5)}" fill="none" stroke="${col}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`;
+}
+const B2 = (x, y, t, size = 24, col = '#1d1416', anchor = 'middle') => `<text x="${x}" y="${y}" text-anchor="${anchor}" font-family="Baloo 2, sans-serif" font-weight="800" font-size="${size}" fill="${col}">${t}</text>`;
+function crate(x, y, k = 1, rot = 0, label = true) {
+  return `<g transform="translate(${x},${y}) rotate(${rot}) scale(${k})"><rect x="-36" y="-56" width="72" height="56" rx="4" fill="#c98f4e" stroke="${INK}" stroke-width="4"/><path d="M-36,-38 H36 M-36,-18 H36 M-14,-56 V0 M14,-56 V0" stroke="#8a5a33" stroke-width="3"/>${label ? `<rect x="-28" y="-40" width="56" height="22" rx="3" fill="#fff8d6" stroke="${INK}" stroke-width="2"/><text x="0" y="-23" text-anchor="middle" font-family="Baloo 2, sans-serif" font-weight="800" font-size="15" fill="#5b3a1e">KAKAO</text>` : ''}</g>`;
+}
+function springP(x1, x2, y, n = 7, amp = 20, sw = 6) {
+  const step = (x2 - x1) / (n * 2); let d = `M${x1},${y}`;
+  for (let i = 0; i < n * 2; i++) d += ` L${x1 + step * (i + .5)},${y + (i % 2 ? amp : -amp)}`;
+  return `<path d="${d} L${x2},${y}" fill="none" stroke="#5f6b73" stroke-width="${sw}" stroke-linejoin="round" stroke-linecap="round"/>`;
+}
+function roughP(x1, x2, y, hgt = 14) {
+  let s = `<rect x="${x1}" y="${y}" width="${x2 - x1}" height="${hgt}" fill="#8a5a33" stroke="${INK}" stroke-width="3"/>`;
+  for (let x = x1 + 8; x < x2 - 4; x += 16) s += `<path d="M${x},${y + hgt - 2} l8,${-hgt + 4}" stroke="#e9cfa0" stroke-width="3"/>`;
+  return s;
+}
+function sack(x, y, k = 1) {
+  return `<g transform="translate(${x},${y}) scale(${k})"><path d="M-60,0 Q-70,-30 -52,-50 Q0,-62 52,-50 Q70,-30 60,0Z" fill="#d9c08c" stroke="${INK}" stroke-width="4"/><path d="M-40,-30 Q0,-38 40,-30" fill="none" stroke="#a88f5c" stroke-width="3"/></g>`;
+}
+/* papan luncur di gudang: kotak di puncak, lantai kasar, pegas penahan */
+function chute(h, top = .3, base = .57, boxAt = 0) {
+  const y0 = h * top, y1 = h * base, x0 = 150, x1 = 520;
+  let s = `<path d="M${x0},${y0} L${x1},${y1} L${x0},${y1}Z" fill="#e7d3ae" stroke="${INK}" stroke-width="4"/><path d="M${x0},${y0} L${x1},${y1}" stroke="#9fd6ec" stroke-width="12" stroke-linecap="round"/><path d="M${x0},${y0} L${x1},${y1}" stroke="${INK}" stroke-width="3"/>`;
+  s += `<rect x="${x0 - 46}" y="${y0 - 6}" width="50" height="${y1 - y0 + 6}" fill="#b98556" stroke="${INK}" stroke-width="4"/>`;
+  s += roughP(x1, 720, y1 - 14) + springP(770, 880, y1 - 40, 6, 18) + `<rect x="760" y="${y1 - 68}" width="12" height="56" fill="#3b4a50" stroke="${INK}" stroke-width="3"/><rect x="880" y="${y1 - 100}" width="26" height="100" fill="#7b8a86" stroke="${INK}" stroke-width="4"/>`;
+  const ang = Math.atan2(y1 - y0, x1 - x0) * 180 / Math.PI, bx = x0 + 60 + (x1 - x0 - 120) * boxAt, by = y0 + (bx - x0) / (x1 - x0) * (y1 - y0);
+  return s + crate(bx, by - 6, .9, ang);
+}
+SCENE.gudang = function (h) {
+  const c = h * .57;
+  let s = rect(1000, h, '#f1e2c4') + Array.from({ length: 9 }, (_, i) => `<path d="M${i * 125},0 V${c}" stroke="#e0cba0" stroke-width="4"/>`).join('');
+  s += `<rect x="640" y="${h * .05}" width="320" height="64" rx="8" fill="url(#pSorumeS)" stroke="${INK}" stroke-width="4"/>` + B2(800, h * .05 + 42, 'KOPERASI KAKAO', 28, C.cream);
+  s += `<rect y="${c}" width="1000" height="${h - c}" fill="#b9b3a7"/><rect y="${c}" width="1000" height="10" fill="#8f897d"/>`;
+  s += sack(700, h * .78, 1) + sack(830, h * .78, 1) + sack(765, h * .78 - 52, 1) + sack(380, h * .8, .9) + sack(480, h * .8, .9);
+  return s;
+};
+{ const _cls = SCENE.classroom; SCENE.classroom = h => _cls(h).replace('FLUIDA STATIS', 'USAHA · ENERGI · DAYA'); }
+
+function bulb(x, y, on, k = 1) {
+  return `<g transform="translate(${x},${y}) scale(${k})">${on ? `<circle r="26" fill="#ffe47a" opacity=".55"/>` : ''}<path d="M-14,4 Q-20,-22 0,-24 Q20,-22 14,4 L9,12 H-9Z" fill="${on ? '#ffd34d' : '#d9dde0'}" stroke="${INK}" stroke-width="3"/><rect x="-8" y="12" width="16" height="10" fill="#7b8a86" stroke="${INK}" stroke-width="2.5"/></g>`;
+}
+function wheel(x, y, r = 46, rot = 0, id = '') {
+  let s = `<g ${id ? `id="${id}"` : ''} transform="translate(${x},${y}) rotate(${rot})"><circle r="${r}" fill="#dfe6ea" stroke="${INK}" stroke-width="4"/>`;
+  for (let i = 0; i < 8; i++) s += `<path d="M0,0 L${r + 12},0 l0,-12" fill="none" stroke="${INK}" stroke-width="4" transform="rotate(${i * 45})"/>`;
+  return s + `<circle r="9" fill="#e2a83b" stroke="${INK}" stroke-width="3"/></g>`;
+}
+
+Object.assign(BOARD, {
+  lintasan() {
+    let s = T(500, 84, 'Kasus: kotak kakao meluncur', 44, '#c0392b', 'middle');
+    const fy = 560;
+    s += `<path d="M110,230 L420,${fy} L110,${fy}Z" fill="#eaf5ff" stroke="${INK}" stroke-width="4"/><path d="M110,230 L420,${fy}" stroke="#3d8fd6" stroke-width="10" stroke-linecap="round"/>`;
+    s += `<path d="M40,${fy} H960" stroke="${INK}" stroke-width="5"/>` + roughP(420, 660, fy - 2, 18);
+    s += springP(730, 880, fy - 34, 7, 20) + `<rect x="718" y="${fy - 64}" width="12" height="60" fill="#3b4a50" stroke="${INK}" stroke-width="3"/><rect x="880" y="${fy - 110}" width="28" height="110" fill="#7b8a86" stroke="${INK}" stroke-width="4"/>`;
+    s += crate(168, 276, 1, 46.8);
+    s += `<path d="M70,230 V${fy} M58,230 H82 M58,${fy} H82" stroke="#1e3f78" stroke-width="4"/>` + `<text x="52" y="400" text-anchor="middle" font-family="Comic Neue, sans-serif" font-weight="700" font-size="30" fill="#1e3f78" transform="rotate(-90 52 400)">h = 5 m</text>`;
+    s += T(250, 190, 'm = 2 kg', 30, '#333', 'middle') + `<text x="300" y="400" font-family="Comic Neue, sans-serif" font-weight="700" font-size="30" fill="#1e6fb8" transform="rotate(46.8 300 400)">licin</text>`;
+    s += T(540, 622, 'kasar, 3 m', 30, '#8a5a33', 'middle') + T(540, 660, 'μk = 0,2', 30, '#8a5a33', 'middle') + T(805, 622, 'pegas', 30, '#333', 'middle') + T(805, 660, 'k = 200 N/m', 30, '#333', 'middle');
+    [['A', 290, 330, '#1e6fb8'], ['B', 540, 480, '#8a5a33'], ['C', 805, 440, '#5f6b73']].forEach(([t, x, y, c]) => { s += `<circle cx="${x}" cy="${y}" r="26" fill="#fff8d6" stroke="${c}" stroke-width="5"/>` + T(x, y + 12, t, 34, c, 'middle'); });
+    return s + T(500, 724, 'g = 10 m/s²  ·  A: bidang miring  ·  B: lantai kasar  ·  C: pegas', 28, '#1b7a3c', 'middle');
+  },
+  rumus() {
+    let s = T(500, 84, 'KOTAK ALAT KITA', 48, '#c0392b', 'middle');
+    const cards = [['Usaha', 'W = F · s', 'gaya searah perpindahan'], ['Energi kinetik', 'Ek = ½ · m · v²', 'energi karena bergerak'], ['Energi potensial', 'Ep = m · g · h', 'energi karena ketinggian'], ['Energi pegas', 'Ep = ½ · k · x²', 'pegas tertekan sejauh x'], ['Kekekalan energi', 'Ep + Ek = tetap', 'jika tidak ada gesekan'], ['Daya', 'P = W / t = F · v', 'laju melakukan usaha']];
+    cards.forEach(([a, f, d], i) => {
+      const x = 60 + (i % 2) * 450, y = 120 + Math.floor(i / 2) * 205;
+      s += `<rect x="${x}" y="${y}" width="430" height="185" rx="16" fill="${i === 4 ? '#dff2e3' : '#fff8d6'}" stroke="#1e3f78" stroke-width="5"/>` + T(x + 215, y + 46, a, 30, '#c0392b', 'middle') + T(x + 215, y + 108, f, 44, '#1e3f78', 'middle') + T(x + 215, y + 156, d, 26, '#333', 'middle');
+    });
+    return s;
+  },
+  energi() {
+    let s = T(500, 84, 'Jejak energi kotak kakao', 44, '#c0392b', 'middle');
+    const by = 590, k = 3.7, col = { ep: '#2b7bd0', ek: '#2e9b57', q: '#e2553a', sp: '#e2a83b' };
+    s += `<path d="M70,${by} H940" stroke="${INK}" stroke-width="5"/>`;
+    const bars = [['Di puncak', [['ep', 100]]], ['Dasar bidang', [['ek', 100]]], ['Lewat lantai', [['ek', 88], ['q', 12]]], ['Pegas tertekan', [['sp', 88], ['q', 12]]]];
+    bars.forEach(([lab, parts], i) => {
+      const x = 110 + i * 215; let y = by;
+      parts.forEach(([c, v]) => { const hh = v * k; y -= hh; s += `<rect x="${x}" y="${y}" width="130" height="${hh}" fill="${col[c]}" stroke="${INK}" stroke-width="4"/>` + (v >= 40 ? B2(x + 65, y + hh / 2 + 10, `${v} J`, 30, '#fff') : B2(x + 150, y + hh / 2 + 9, `${v} J`, 26, col[c], 'start')); });
+      s += T(x + 65, by + 40, lab, 27, '#333', 'middle');
+      if (i < 3) s += arrowP(x + 148, by - 150, x + 200, by - 150, '#555', 5);
+    });
+    [['ep', 'Ep (ketinggian)', 80], ['ek', 'Ek (gerak)', 330], ['q', 'kalor (gesekan)', 530], ['sp', 'Ep pegas', 790]].forEach(([c, t, x]) => { s += `<rect x="${x}" y="676" width="30" height="30" fill="${col[c]}" stroke="${INK}" stroke-width="3"/>` + T(x + 40, 702, t, 26, '#333'); });
+    return s + T(500, 142, 'Jumlah energi selalu 100 J. Hanya bentuknya yang berubah.', 30, '#1b7a3c', 'middle');
+  },
+  daya() {
+    let s = T(70, 90, 'DAYA', 52, '#c0392b') + T(240, 90, 'seberapa cepat usaha dilakukan', 30, '#333');
+    s += `<rect x="70" y="120" width="400" height="200" rx="16" fill="#fff8d6" stroke="#1e3f78" stroke-width="5"/>` + T(270, 196, 'P = W / t', 56, '#1e3f78', 'middle') + T(270, 276, 'P = F · v', 56, '#1e3f78', 'middle');
+    s += T(510, 160, 'P = daya (watt = J/s)', 29, '#333') + T(510, 204, 'W = usaha (J)', 29, '#333') + T(510, 248, 't = waktu (s)', 29, '#333') + T(510, 292, 'v = kecepatan tetap (m/s)', 29, '#333');
+    s += T(500, 388, 'Mengangkat kotak 2 kg setinggi 5 m: W = 2 × 10 × 5 = 100 J', 29, '#1b7a3c', 'middle');
+    [['Soru: 5 s', 20, '#2b7bd0'], ['Devi: 10 s', 10, '#c0392b']].forEach(([n, p, c], i) => {
+      const y = 440 + i * 120;
+      s += T(70, y + 46, n, 34, '#1d1416') + `<rect x="300" y="${y}" width="${p * 22}" height="70" fill="${c}" stroke="${INK}" stroke-width="4"/>` + T(320 + p * 22, y + 48, `${p} W`, 38, c);
+    });
+    return s + T(500, 712, 'Usaha sama, waktu lebih singkat → daya lebih besar', 30, '#c0392b', 'middle');
+  },
+  turbin() {
+    let s = T(500, 84, 'Dari air jatuh menjadi listrik', 44, '#c0392b', 'middle');
+    s += `<rect x="60" y="180" width="170" height="330" fill="#9c8b6a" stroke="${INK}" stroke-width="4"/><rect x="60" y="150" width="210" height="34" fill="#2aa3c4" stroke="${INK}" stroke-width="4"/><rect x="232" y="184" width="40" height="290" fill="#8fd3ea" stroke="#2aa3c4" stroke-width="3"/>`;
+    s += `<rect x="60" y="510" width="430" height="30" fill="#2aa3c4" stroke="${INK}" stroke-width="4"/>` + wheel(290, 470, 44, 12);
+    s += `<path d="M34,160 V510 M22,160 H46 M22,510 H46" stroke="#1e3f78" stroke-width="4"/>` + T(4, 346, 'h', 32, '#1e3f78');
+    s += `<rect x="420" y="410" width="130" height="90" rx="10" fill="#dfe6ea" stroke="${INK}" stroke-width="4"/>` + T(485, 466, 'generator', 24, '#333', 'middle') + `<path d="M334,470 H420" stroke="${INK}" stroke-width="6"/><path d="M550,440 C640,440 640,330 720,330" fill="none" stroke="#e2a83b" stroke-width="6"/>`;
+    s += bulb(760, 320, true, 1.5) + bulb(840, 320, true, 1.5) + bulb(920, 320, true, 1.5);
+    s += T(150, 136, 'Ep air', 30, '#2b7bd0', 'middle') + T(345, 300, 'Ek air', 30, '#2e9b57') + T(840, 250, 'energi listrik', 30, '#b9770e', 'middle');
+    s += arrowP(430, 520, 560, 590, '#e2553a', 6) + T(580, 606, 'sebagian menjadi kalor dan bunyi', 26, '#e2553a');
+    s += `<rect x="560" y="400" width="400" height="150" rx="16" fill="#fff8d6" stroke="#1e3f78" stroke-width="5"/>` + T(760, 452, 'P masuk = m·g·h / t', 34, '#1e3f78', 'middle') + T(760, 512, 'η = P keluar / P masuk', 34, '#1e3f78', 'middle');
+    return s + T(500, 690, 'Efisiensi (η) selalu kurang dari 100%', 32, '#1b7a3c', 'middle');
+  },
+});
+</script>
+<script>/* ===== Lima Sekawan dan Jejak Energi — naskah ===== */
+const NAMES = { fitria: 'Bu Fitria', soru: 'Soru', rume: 'Rume', tugu: 'Tugu', devi: 'Devi', oto: 'Oto' };
+
+const STORY = [
+  /* ---------------- BAB 1 ---------------- */
+  { type: 'chapter', id: 'bab-1', no: 'Bab 1', title: 'Kotak Kakao Meluncur', topic: 'Usaha · Energi · Hukum Kekekalan Energi Mekanik' },
+  {
+    h: 1040, bg: 'gudang', extra: h => chute(h, .4, .57, .1),
+    chars: [['soru', 'grin', { x: 220, y: 1110, s: 1, pose: 'cheer' }], ['tugu', 'smile', { x: 790, y: 1110, s: 1, flip: true }]],
+    cap: { t: 'Sabtu pagi di gudang koperasi kakao, Kolaka Timur.', x: 2, y: 2, w: 56 },
+    b: [
+      { w: 'soru', t: 'Kotak kakao tinggal dilepas dari atas. Meluncur sendiri sampai bawah!', x: 2, y: 11, wd: 44, tail: 'bl' },
+      { w: 'tugu', t: 'Di ujung lintasan ada pegas penahan, supaya tidak menabrak dinding.', x: 52, y: 11, wd: 46, tail: 'br' },
+    ],
+  },
+  {
+    h: 900, bg: 'gudang', extra: h => chute(h, .28, .57, .95),
+    chars: [['rume', 'think', { x: 220, y: 970, s: 1, pose: 'think' }], ['oto', 'surprise', { x: 790, y: 970, s: 1, flip: true, goggles: 'head' }]],
+    sfx: [{ t: 'SREEET!', x: 16, y: 45, size: 5.5, rot: 8 }],
+    b: [
+      { w: 'rume', t: 'Papan luncurnya licin, tapi lantai sebelum pegas sengaja dibuat kasar. Kenapa, ya?', x: 2, y: 2, wd: 46, tail: 'bl' },
+      { w: 'oto', t: 'Supaya kotaknya melambat dulu. Tapi energinya pergi ke mana?', x: 54, y: 2, wd: 44, tail: 'br' },
+    ],
+  },
+  {
+    type: 'problem', title: 'Stimulus Masalah 1', place: 'Gudang koperasi kakao, Kolaka Timur',
+    qs: ['Konsep fisika apa saja yang bekerja sejak kotak dilepas sampai menekan pegas?', 'Bagaimana cara menghitung energi kotak di setiap tahap geraknya?', 'Ke mana perginya energi kotak saat melewati lantai kasar?'],
+  },
+  {
+    h: 780, bg: 'classroom',
+    chars: [['devi', 'grin', { x: 200, y: 850, s: 1, pose: 'cheer' }], ['fitria', 'explain', { x: 790, y: 850, s: 1.05, flip: true, pose: 'point' }]],
+    cap: { t: 'Senin pagi, pertemuan ke-4.', x: 2, y: 2, w: 36 },
+    b: [
+      { w: 'fitria', t: 'Tiga pertemuan lalu kita belajar usaha, energi, dan daya satu per satu. Hari ini semuanya kita pakai sekaligus untuk kotak kakao kalian.', x: 42, y: 10, wd: 55, tail: 'br' },
+      { w: 'devi', t: 'Seperti menyusun puzzle, Bu!', x: 5, y: 36, wd: 30, tail: 'bl' },
+    ],
+  },
+  {
+    h: 760, bg: 'board', board: 'lintasan',
+    say: [
+      { w: 'fitria', t: 'Kita bagi perjalanan kotak menjadi tiga tahap. A: meluncur di bidang miring yang licin. B: melewati lantai kasar. C: menekan pegas sampai berhenti.' },
+      { w: 'tugu', t: 'Datanya sudah saya ukur, Bu. Massa kotak 2 kg, tinggi papan 5 m, lantai kasar 3 m, dan konstanta pegas 200 N/m.' },
+    ],
+  },
+  {
+    h: 760, bg: 'board', board: 'rumus',
+    say: [
+      { w: 'fitria', t: 'Ini kotak alat kita. Kuncinya adalah memilih alat yang tepat untuk setiap tahap.' },
+      { w: 'rume', t: 'Tahap A licin, jadi energi mekaniknya kekal. Energi potensial di puncak berubah seluruhnya menjadi energi kinetik di dasar.' },
+      { w: 'soru', t: 'Tahap B ada gesekan. Gaya gesek melakukan usaha negatif, jadi energi kinetiknya berkurang.' },
+      { w: 'oto', t: 'Tahap C, sisa energi kinetik berubah menjadi energi potensial pegas!' },
+    ],
+  },
+  {
+    type: 'calc', who: 'tugu', title: 'Ayo Hitung bersama Tugu',
+    lines: [
+      ['Diketahui', 'm = 2 kg, h = 5 m, s = 3 m, μk = 0,2, k = 200 N/m, g = 10 m/s²'],
+      ['Tahap A', 'Ep = m·g·h = 2 × 10 × 5 = <b>100 J</b>'],
+      ['', 'Licin, maka Ek di dasar = <b>100 J</b>, dan v = √(2·Ek / m) = √100 = <b>10 m/s</b>'],
+      ['Tahap B', 'fk = μk·m·g = 0,2 × 2 × 10 = <b>4 N</b>'],
+      ['', 'W gesek = −fk·s = −4 × 3 = <b>−12 J</b>'],
+      ['', 'Ek sisa = 100 − 12 = <b>88 J</b>, dan v = √88 ≈ <b>9,4 m/s</b>'],
+      ['Tahap C', '½·k·x² = 88, maka x = √(2 × 88 / 200) ≈ <b>0,94 m</b>'],
+    ],
+    note: 'Tanda minus pada usaha gaya gesek berarti gaya gesek mengambil energi dari kotak. Energi 12 J itu tidak hilang, tetapi berubah menjadi kalor: lantai dan kotak menjadi sedikit lebih hangat.',
+  },
+  {
+    h: 760, bg: 'board', board: 'energi',
+    say: [
+      { w: 'devi', t: 'Kalau dijumlah, energinya selalu 100 J. Tidak ada yang hilang, cuma berganti bentuk.' },
+      { w: 'fitria', t: 'Tepat, Devi. Energi mekaniknya memang berkurang 12 J karena gesekan, tetapi energi totalnya tetap. Itulah hukum kekekalan energi.' },
+    ],
+  },
+  { type: 'sim', sim: 'luncur' },
+
+  /* ---------------- BAB 2 ---------------- */
+  { type: 'chapter', id: 'bab-2', no: 'Bab 2', title: 'Seberapa Cepat Energi Bekerja?', topic: 'Daya · Efisiensi' },
+  {
+    h: 900, bg: 'gudang', extra: h => chute(h, .28, .57, .1),
+    chars: [['soru', 'laugh', { x: 220, y: 970, s: 1, pose: 'cheer' }], ['devi', 'wince', { x: 790, y: 970, s: 1, flip: true }]],
+    b: [
+      { w: 'soru', t: 'Kotaknya harus dinaikkan lagi ke atas. Aku cuma butuh 5 detik!', x: 2, y: 2, wd: 44, tail: 'bl' },
+      { w: 'devi', t: 'Aku 10 detik. Padahal kotaknya sama dan tingginya juga sama.', x: 54, y: 2, wd: 44, tail: 'br' },
+    ],
+  },
+  {
+    h: 820, bg: 'moramo',
+    chars: [['oto', 'grin', { x: 230, y: 890, s: 1, goggles: 'head' }], ['rume', 'think', { x: 790, y: 890, s: 1, flip: true, pose: 'think' }]],
+    cap: { t: 'Hari Minggu di Air Terjun Moramo, Konawe Selatan.', x: 2, y: 2, w: 50 },
+    b: [
+      { w: 'oto', t: 'Airnya jatuh terus tanpa henti. Energi potensialnya pasti besar sekali!', x: 2, y: 12, wd: 44, tail: 'bl' },
+      { w: 'rume', t: 'Kalau air jatuh dipakai memutar turbin, berapa lampu yang bisa menyala, ya?', x: 56, y: 40, wd: 42, tail: 'br' },
+    ],
+  },
+  {
+    type: 'problem', title: 'Stimulus Masalah 2', place: 'Gudang koperasi kakao & Air Terjun Moramo',
+    qs: ['Soru dan Devi melakukan usaha yang sama. Lalu apa yang membedakan keduanya?', 'Bagaimana cara menghitung daya turbin dari energi air yang jatuh?', 'Mengapa tidak semua energi air bisa diubah menjadi energi listrik?'],
+  },
+  {
+    h: 760, bg: 'board', board: 'daya',
+    say: [
+      { w: 'fitria', t: 'Usaha Soru dan Devi sama, yaitu 100 J. Yang berbeda adalah waktunya. Besaran yang menyatakan seberapa cepat usaha dilakukan disebut daya.' },
+      { w: 'soru', t: 'Dayaku 20 watt, Devi 10 watt. Jadi aku dua kali lebih cepat memindahkan energi.' },
+      { w: 'fitria', t: 'Kalau kotak didorong ke atas dengan kecepatan tetap, kalian juga bisa memakai P = F · v.' },
+    ],
+  },
+  {
+    h: 760, bg: 'board', board: 'turbin',
+    say: [
+      { w: 'fitria', t: 'Pada pembangkit listrik tenaga air, energi potensial air berubah menjadi energi kinetik, memutar turbin, lalu generator mengubahnya menjadi listrik.' },
+      { w: 'rume', t: 'Tapi turbinnya pasti bergesekan dan berbunyi, Bu. Berarti sebagian energinya terbuang?' },
+      { w: 'fitria', t: 'Betul. Perbandingan daya yang keluar dengan daya yang masuk disebut efisiensi. Nilainya selalu kurang dari 100%.' },
+    ],
+  },
+  {
+    type: 'calc', who: 'tugu', title: 'Ayo Hitung bersama Tugu',
+    lines: [
+      ['Diketahui', 'model turbin mini: tiap detik 50 kg air jatuh dari ketinggian 4 m'],
+      ['', 'efisiensi η = 60%, g = 10 m/s²'],
+      ['Daya masuk', 'P = m·g·h / t = 50 × 10 × 4 / 1 = <b>2.000 W</b>'],
+      ['Daya keluar', 'P keluar = η × P masuk = 60% × 2.000 = <b>1.200 W</b>'],
+      ['Lampu', '1.200 W / 10 W = <b>120 lampu LED</b> menyala'],
+    ],
+    note: 'Angka ini adalah contoh hitungan untuk model turbin kecil, bukan data Air Terjun Moramo. Sisa 800 W berubah menjadi kalor dan bunyi pada turbin dan generator.',
+  },
+  { type: 'sim', sim: 'daya' },
+  { type: 'sim', sim: 'turbin' },
+  {
+    h: 860, bg: 'burst',
+    chars: [
+      ['fitria', 'happy', { x: 500, y: 600, s: .85, pose: 'point' }],
+      ['tugu', 'smile', { x: 110, y: 930, s: .76 }], ['rume', 'happy', { x: 305, y: 930, s: .78 }],
+      ['soru', 'laugh', { x: 500, y: 930, s: .8, pose: 'cheer' }], ['devi', 'grin', { x: 695, y: 930, s: .78 }],
+      ['oto', 'grin', { x: 890, y: 930, s: .76, goggles: 'head', flip: true, pose: 'cheer' }],
+    ],
+    b: [{ w: 'fitria', t: 'Usaha memindahkan energi, energi berganti bentuk tetapi jumlahnya kekal, dan daya menyatakan seberapa cepat semua itu terjadi.', x: 3, y: 3, wd: 44, tail: 'br' }],
+    sfx: [{ t: 'PAHAM, BU!', x: 58, y: 8, size: 9, rot: 6 }],
+  },
+  { type: 'sim', sim: 'lkpd' },
+];
+
+const SUMMARY = [
+  { t: 'Usaha', f: 'W = F · s', d: 'Usaha adalah cara gaya memindahkan energi. Usaha positif menambah energi benda. Usaha gaya gesek bernilai negatif, sehingga mengurangi energi kinetik benda.' },
+  { t: 'Energi Mekanik', f: 'Ek = ½mv² · Ep = mgh', d: 'Energi kinetik dimiliki benda yang bergerak, energi potensial dimiliki benda karena ketinggiannya. Pegas yang tertekan menyimpan Ep = ½·k·x².' },
+  { t: 'Kekekalan Energi', f: 'Ep + Ek = tetap', d: 'Tanpa gesekan, energi mekanik kekal. Jika ada gesekan, energi mekanik berkurang sebesar usaha gaya gesek dan berubah menjadi kalor. Energi total tetap sama.' },
+  { t: 'Daya dan Efisiensi', f: 'P = W / t = F · v', d: 'Daya menyatakan seberapa cepat usaha dilakukan (watt = J/s). Efisiensi η = P keluar / P masuk selalu kurang dari 100% karena sebagian energi menjadi kalor dan bunyi.' },
+];
+
+const QUIZ = [
+  { q: 'Kotak kakao bermassa 2 kg berada di puncak papan luncur setinggi 5 m (g = 10 m/s²). Energi potensialnya adalah...', o: ['10 J', '50 J', '100 J', '200 J'], a: 2, e: 'Ep = m·g·h = 2 × 10 × 5 = 100 J.' },
+  { q: 'Kotak dilepas dari puncak bidang miring licin setinggi 5 m. Jika massa kotak diganti menjadi 4 kg, kecepatannya di dasar bidang miring akan...', o: ['Menjadi dua kali lipat', 'Tetap 10 m/s', 'Menjadi setengahnya', 'Menjadi nol'], a: 1, e: 'm·g·h = ½·m·v², sehingga v = √(2·g·h) = 10 m/s. Kecepatan di dasar tidak bergantung pada massa.' },
+  { q: 'Kotak 2 kg melewati lantai kasar sepanjang 3 m dengan μk = 0,2. Usaha yang dilakukan gaya gesek adalah...', o: ['−4 J', '−6 J', '−12 J', '−60 J'], a: 2, e: 'fk = μk·m·g = 0,2 × 2 × 10 = 4 N, sehingga W = −fk·s = −4 × 3 = −12 J. Energi itu berubah menjadi kalor.' },
+  { q: 'Kotak dengan energi kinetik 100 J menumbuk pegas (k = 200 N/m) sampai berhenti. Pegas tertekan sejauh...', o: ['0,5 m', '1 m', '2 m', '10 m'], a: 1, e: '½·k·x² = 100, sehingga x² = 2 × 100 / 200 = 1 dan x = 1 m.' },
+  { q: 'Devi mengangkat kotak 2 kg setinggi 5 m dalam waktu 4 s. Daya Devi adalah...', o: ['10 W', '25 W', '40 W', '400 W'], a: 1, e: 'W = m·g·h = 100 J, sehingga P = W / t = 100 / 4 = 25 W.' },
+  { q: 'Air jatuh memberi daya 2.000 W pada sebuah turbin mini. Jika efisiensinya 60%, daya listrik yang dihasilkan adalah...', o: ['600 W', '800 W', '1.200 W', '2.000 W'], a: 2, e: 'P keluar = η × P masuk = 60% × 2.000 = 1.200 W. Sisanya 800 W menjadi kalor dan bunyi.' },
+];
+</script>
+<script>/* ===== Lab Mini: usaha, energi, daya ===== */
+const fmt = (n, d = 0) => n.toLocaleString('id-ID', { minimumFractionDigits: d, maximumFractionDigits: d });
+const G = 10;
+
+function simShell(id, no, title, who, intro, controls, svg, readout, challenges) {
+  return `<section class="lab" id="${id}" data-sim="${id}">
+    <div class="lab-hd"><span class="lab-tag">${typeof no === "number" ? "Lab Mini " + no : no}</span><h3>${title}</h3></div>
+    <div class="lab-intro"><div class="av">${avatar(who, 'grin')}</div><p>${intro}</p></div>
+    <div class="lab-body">
+      <div class="lab-stage">${svg}</div>
+      <div class="lab-ctrl">${controls}</div>
+    </div>
+    <div class="lab-out" aria-live="polite">${readout}</div>
+    <div class="lab-ch"><b>Tantangan</b><ul>${challenges.map((c, i) => `<li data-ch="${i}"><span class="tick" aria-hidden="true"></span><span>${c}</span></li>`).join('')}</ul></div>
+  </section>`;
+}
+function seg(name, opts, sel) {
+  return `<div class="seg" role="radiogroup" data-name="${name}">${opts.map((o, i) => `<button type="button" role="radio" aria-checked="${i === sel}" data-v="${i}" class="${i === sel ? 'on' : ''}">${o}</button>`).join('')}</div>`;
+}
+function slider(id, label, min, max, step, val, unit) {
+  return `<label class="sl" for="${id}"><span>${label}</span><output id="${id}-o">${val} ${unit}</output></label><input type="range" id="${id}" min="${min}" max="${max}" step="${step}" value="${val}">`;
+}
+function wireSeg(root, name, cb) {
+  root.querySelector(`.seg[data-name="${name}"]`).addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    b.parentElement.querySelectorAll('button').forEach(x => { x.classList.toggle('on', x === b); x.setAttribute('aria-checked', x === b); });
+    cb(+b.dataset.v);
+  });
+}
+function done(root, i) { const li = root.querySelector(`[data-ch="${i}"]`); if (li && !li.classList.contains('ok')) li.classList.add('ok'); }
+
+const BT = (x, y, t, size, col, id, anchor = 'middle') => `<text ${id ? `id="${id}"` : ''} x="${x}" y="${y}" text-anchor="${anchor}" font-family="Baloo 2, sans-serif" font-weight="800" font-size="${size}" fill="${col}">${t}</text>`;
+
+/* ---------- 1. Peluncur energi ---------- */
+function simLuncur() {
+  const FY = 300, BX = 250, RX = 400, SX = 440, WX = 560;
+  const bar = (i, lab, col) => `<rect x="${340 + i * 62}" y="50" width="40" height="100" fill="#eef2f5" stroke="#9fb3bf" stroke-width="2"/><rect id="l-b${i}" x="${340 + i * 62}" y="150" width="40" height="0" fill="${col}"/>${BT(360 + i * 62, 172, lab, 19, '#333')}${BT(360 + i * 62, 42, '', 19, col, 'l-v' + i)}`;
+  const svg = `<svg viewBox="0 0 600 380" role="img" aria-label="Kotak meluncur di bidang miring, lantai kasar, lalu menekan pegas">
+    <rect width="600" height="380" fill="#fbfdff"/>
+    <path id="l-tri" d="" fill="#eaf5ff" stroke="${INK}" stroke-width="3"/><path id="l-ramp" d="" stroke="#3d8fd6" stroke-width="8" stroke-linecap="round"/>
+    <rect x="20" y="${FY}" width="560" height="10" fill="#b9b3a7" stroke="${INK}" stroke-width="2"/>
+    ${roughP(BX, RX, FY - 2, 12)}
+    <g id="l-sp"></g><rect x="${WX}" y="${FY - 70}" width="18" height="70" fill="#7b8a86" stroke="${INK}" stroke-width="3"/>
+    <g id="l-box"><rect x="-36" y="-30" width="36" height="30" rx="3" fill="#c98f4e" stroke="${INK}" stroke-width="3"/><path d="M-36,-15 H0 M-18,-30 V0" stroke="#8a5a33" stroke-width="2"/></g>
+    ${BT(30, 0, '', 21, '#1e3f78', 'l-h', 'start')}
+    ${BT(325, FY + 34, 'kasar 3 m', 20, '#8a5a33')}${BT(500, FY + 34, 'pegas', 20, '#5f6b73')}${BT(150, FY + 34, 'licin', 20, '#1e6fb8')}
+    ${bar(0, 'Ep', '#2b7bd0')}${bar(1, 'Ek', '#2e9b57')}${bar(2, 'Kalor', '#e2553a')}${bar(3, 'Pegas', '#e2a83b')}
+    ${BT(300, 368, '', 23, '#1b7a3c', 'l-st')}
+  </svg>`;
+  const ctrl = `${slider('l-m', 'Massa kotak (m)', 1, 5, 1, 2, 'kg')}
+    ${slider('l-hh', 'Tinggi papan (h)', 1, 8, 1, 3, 'm')}
+    ${slider('l-mu', 'Koefisien gesek lantai (μk)', 0, 0.5, 0.05, 0.2, '')}
+    ${slider('l-k', 'Konstanta pegas (k)', 100, 400, 50, 200, 'N/m')}
+    <button type="button" class="lab-go" id="l-go">Luncurkan kotak</button>`;
+  const html = simShell('lab-1', 1, 'Peluncur energi', 'tugu',
+    'Atur massa kotak, tinggi papan, kekasaran lantai, dan pegasnya. Tekan tombol untuk meluncurkan kotak, lalu amati energi berganti bentuk.',
+    ctrl, svg, `<p id="l-out"></p>`,
+    ['Susun <b>kasus LKPD</b>: m = 2 kg, h = 5 m, μk = 0,2, k = 200 N/m, lalu luncurkan. Cocokkan dengan hitungan Tugu.', 'Buat kotak <b>berhenti di lantai kasar</b> sebelum menyentuh pegas.', 'Dengan tinggi papan <b>minimal 4 m</b>, atur agar pegas tertekan <b>tidak lebih dari 0,5 m</b>.']);
+  return { html, init(root) {
+    const $ = s => root.querySelector(s), mE = $('#l-m'), hE = $('#l-hh'), muE = $('#l-mu'), kE = $('#l-k');
+    let raf = 0;
+    const calc = () => {
+      const m = +mE.value, h = +hE.value, mu = +muE.value, k = +kE.value, E0 = m * G * h, f = mu * m * G;
+      const stop = f * 3 >= E0 && f > 0, dist = stop ? E0 / f : 3, E2 = stop ? 0 : E0 - f * 3, x = Math.sqrt(2 * E2 / k);
+      return { m, h, mu, k, E0, f, stop, dist, E2, x };
+    };
+    const draw = (c, ph, u) => { // ph 0 ramp, 1 rough, 2 spring
+      const ty = FY - c.h * 26, ang = Math.atan2(FY - ty, BX - 60) * 180 / Math.PI;
+      $('#l-tri').setAttribute('d', `M60,${ty} L${BX},${FY} L60,${FY}Z`); $('#l-ramp').setAttribute('d', `M60,${ty} L${BX},${FY}`);
+      const hl = $('#l-h'); hl.setAttribute('y', ty - 44); hl.textContent = `h = ${c.h} m`;
+      let bx, by, rot = 0, ep = 0, ek = 0, q = 0, sp = 0, front = SX;
+      if (ph === 0) { const r = u * u; bx = 100 + (BX - 100) * r; by = ty + (bx - 60) / (BX - 60) * (FY - ty); rot = ang; ep = c.E0 * (1 - r) ; ek = c.E0 * r; if (u === 0) { ep = c.E0; ek = 0; } }
+      else if (ph === 1) { const d = c.dist * u; bx = BX + 36 + d * ((RX - BX - 36) / 3) ; by = FY; q = c.f * d; ek = c.E0 - q; }
+      else { const cx = c.x * u, vis = 90 * (1 - Math.exp(-cx / 1.1)); bx = SX + (u > 0 ? vis : 0); by = FY; q = c.f * 3; sp = .5 * c.k * cx * cx; ek = Math.max(0, c.E2 - sp); front = bx; }
+      if (ph === 2 && u === 0) bx = SX;
+      $('#l-box').setAttribute('transform', `translate(${bx},${by}) rotate(${rot})`);
+      $('#l-sp').innerHTML = springP(Math.max(SX, front), WX, FY - 16, 6, 12, 4) + `<rect x="${Math.max(SX, front) - 3}" y="${FY - 32}" width="6" height="32" fill="#3b4a50"/>`;
+      [ep, ek, q, sp].forEach((v, i) => { const hh = c.E0 ? Math.max(0, Math.min(100, v / c.E0 * 100)) : 0; const b = $('#l-b' + i); b.setAttribute('y', 150 - hh); b.setAttribute('height', hh); $('#l-v' + i).textContent = fmt(v, v % 1 ? 1 : 0); });
+    };
+    const text = c => {
+      const v1 = Math.sqrt(2 * c.E0 / c.m);
+      let t = `<b>A.</b> Ep = m·g·h = ${c.m} × 10 × ${c.h} = <b>${fmt(c.E0)} J</b>, kecepatan di dasar <b>${fmt(v1, 1)} m/s</b>.<br><b>B.</b> fk = μk·m·g = <b>${fmt(c.f, 1)} N</b>. `;
+      t += c.stop ? `Energi kotak habis setelah <b>${fmt(c.dist, 2)} m</b> di lantai kasar. Kotak berhenti sebelum menyentuh pegas.` : `W gesek = <b>−${fmt(c.f * 3, 1)} J</b>, Ek sisa = <b>${fmt(c.E2, 1)} J</b>.<br><b>C.</b> x = √(2·Ek / k) = <b>${fmt(c.x, 2)} m</b>.`;
+      $('#l-out').innerHTML = t;
+    };
+    const reset = () => { cancelAnimationFrame(raf); const c = calc(); ['m', 'hh', 'mu', 'k'].forEach(id => { const e = $('#l-' + id), u = { m: 'kg', hh: 'm', mu: '', k: 'N/m' }[id]; $('#l-' + id + '-o').textContent = `${fmt(+e.value, id === 'mu' ? 2 : 0)} ${u}`.trim(); }); draw(c, 0, 0); text(c); $('#l-st').textContent = 'Kotak siap di puncak'; };
+    const finish = c => {
+      $('#l-st').textContent = c.stop ? 'Kotak berhenti di lantai kasar' : `Pegas tertekan ${fmt(c.x, 2)} m`;
+      if (c.m === 2 && c.h === 5 && Math.abs(c.mu - .2) < 1e-6 && c.k === 200) done(root, 0);
+      if (c.stop) done(root, 1);
+      if (!c.stop && c.h >= 4 && c.x <= .5) done(root, 2);
+    };
+    $('#l-go').addEventListener('click', () => {
+      cancelAnimationFrame(raf); const c = calc(), t0 = performance.now(), D = [900, 700, 600]; $('#l-st').textContent = 'Meluncur...';
+      const still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const end = () => { c.stop ? draw(c, 1, 1) : draw(c, 2, 1); finish(c); };
+      if (still) return end();
+      const step = now => {
+        let t = now - t0;
+        if (t < D[0]) draw(c, 0, t / D[0]);
+        else if (t < D[0] + D[1]) draw(c, 1, (t - D[0]) / D[1]);
+        else if (!c.stop && t < D[0] + D[1] + D[2]) draw(c, 2, (t - D[0] - D[1]) / D[2]);
+        else return end();
+        raf = requestAnimationFrame(step);
+      };
+      raf = requestAnimationFrame(step);
+    });
+    [mE, hE, muE, kE].forEach(e => e.addEventListener('input', reset)); reset();
+  } };
+}
+
+/* ---------- 2. Adu daya ---------- */
+function simDaya() {
+  const svg = `<svg viewBox="0 0 600 380" role="img" aria-label="Kotak diangkat dengan tali ke rak">
+    <rect width="600" height="380" fill="#fbfdff"/><rect x="20" y="340" width="560" height="10" fill="#b9b3a7" stroke="${INK}" stroke-width="2"/>
+    <rect x="330" y="0" width="14" height="340" fill="#8a6a46" stroke="${INK}" stroke-width="3" id="d-post"/>
+    <rect id="d-rak" x="344" y="80" width="150" height="12" fill="#8a6a46" stroke="${INK}" stroke-width="3"/>
+    <path d="M250,24 H344" stroke="${INK}" stroke-width="6"/><circle cx="250" cy="30" r="14" fill="#dfe6ea" stroke="${INK}" stroke-width="4"/>
+    <path id="d-rope" d="" stroke="#5b4a3c" stroke-width="3"/>
+    <g id="d-box"><rect x="-26" y="-40" width="52" height="40" rx="3" fill="#c98f4e" stroke="${INK}" stroke-width="3"/><path d="M-26,-20 H26 M-9,-40 V0 M9,-40 V0" stroke="#8a5a33" stroke-width="2"/></g>
+    <path id="d-dim" d="" stroke="#1e3f78" stroke-width="3"/>${BT(140, 0, '', 21, '#1e3f78', 'd-hl')}
+    ${BT(470, 150, '', 40, '#1b7a3c', 'd-p')}${BT(470, 182, '', 21, '#333', 'd-w')}
+    <g id="d-lamps"></g>${BT(470, 304, '', 20, '#333', 'd-ll')}
+  </svg>`;
+  const ctrl = `${slider('d-m', 'Massa kotak (m)', 1, 20, 1, 2, 'kg')}
+    ${slider('d-h', 'Tinggi angkat (h)', 1, 5, 1, 5, 'm')}
+    ${slider('d-t', 'Waktu mengangkat (t)', 0.5, 20, 0.5, 10, 's')}`;
+  const html = simShell('lab-2', 2, 'Adu daya mengangkat kotak', 'soru',
+    'Kotak diangkat ke rak dengan kecepatan tetap. Atur massa, tinggi, dan waktunya, lalu lihat usaha dan dayanya.',
+    ctrl, svg, `<p id="d-out"></p>`,
+    ['Soru mengangkat kotak <b>2 kg</b> setinggi <b>5 m</b> dalam <b>5 s</b>. Atur dan baca dayanya.', 'Tanpa mengubah usaha (tetap <b>100 J</b>), buat dayanya menjadi <b>40 W</b>.', 'Capai daya <b>minimal 200 W</b>. Apa saja yang kamu ubah?']);
+  return { html, init(root) {
+    const $ = s => root.querySelector(s), mE = $('#d-m'), hE = $('#d-h'), tE = $('#d-t'); let c = {}, t0 = performance.now();
+    const still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function upd() {
+      const m = +mE.value, h = +hE.value, t = +tE.value, W = m * G * h, P = W / t, v = h / t; c = { m, h, t, W, P };
+      $('#d-m-o').textContent = `${m} kg`; $('#d-h-o').textContent = `${h} m`; $('#d-t-o').textContent = `${fmt(t, 1)} s`;
+      const ry = 340 - h * 50; $('#d-rak').setAttribute('y', ry);
+      $('#d-dim').setAttribute('d', `M190,${ry} V340 M182,${ry} H198 M182,340 H198`); const hl = $('#d-hl'); hl.setAttribute('y', (ry + 340) / 2 + 6); hl.textContent = `h = ${h} m`;
+      $('#d-p').textContent = `${fmt(P, P < 10 && P % 1 ? 1 : 0)} W`; $('#d-w').textContent = `usaha W = ${fmt(W)} J`;
+      const n = Math.min(10, Math.floor(P / 10)); let g = ''; for (let i = 0; i < 10; i++) g += bulb(390 + (i % 5) * 40, 220 + Math.floor(i / 5) * 44, i < n, .62);
+      $('#d-lamps').innerHTML = g; $('#d-ll').textContent = P >= 10 ? `setara ${fmt(Math.floor(P / 10))} lampu LED 10 W` : 'belum cukup untuk 1 lampu';
+      $('#d-out').innerHTML = `W = m·g·h = ${m} × 10 × ${h} = <b>${fmt(W)} J</b>. P = W / t = ${fmt(W)} / ${fmt(t, 1)} = <b>${fmt(P, 1)} W</b>. Cek dengan P = F·v: ${fmt(m * G)} N × ${fmt(v, 2)} m/s = ${fmt(m * G * v, 1)} W.`;
+      if (m === 2 && h === 5 && t === 5) done(root, 0);
+      if (W === 100 && Math.abs(P - 40) < 1e-6) done(root, 1);
+      if (P >= 200) done(root, 2);
+      if (still) place(1);
+    }
+    function place(u) { const y = 340 - c.h * 50 * u; $('#d-box').setAttribute('transform', `translate(250,${y})`); $('#d-rope').setAttribute('d', `M250,44 V${y - 40}`); }
+    function loop(now) {
+      if (!root.isConnected) return; const per = c.t * 300 + 900, u = Math.min(1, ((now - t0) % per) / (c.t * 300)); place(u); requestAnimationFrame(loop);
+    }
+    [mE, hE, tE].forEach(e => e.addEventListener('input', upd)); upd(); if (!still) requestAnimationFrame(now => { t0 = now; requestAnimationFrame(loop); });
+  } };
+}
+
+/* ---------- 3. Turbin air mini ---------- */
+function simTurbin() {
+  const svg = `<svg viewBox="0 0 600 380" role="img" aria-label="Air jatuh memutar turbin dan menyalakan lampu">
+    <rect width="600" height="380" fill="#fbfdff"/>
+    <rect id="t-cliff" x="20" y="100" width="110" height="230" fill="#9c8b6a" stroke="${INK}" stroke-width="3"/>
+    <rect id="t-top" x="20" y="84" width="130" height="18" fill="#2aa3c4" stroke="${INK}" stroke-width="3"/>
+    <rect id="t-fall" x="132" y="100" width="20" height="200" fill="#8fd3ea"/>
+    <rect x="20" y="330" width="330" height="22" fill="#2aa3c4" stroke="${INK}" stroke-width="3"/>
+    ${wheel(170, 300, 30, 0, 't-wh')}
+    <rect x="236" y="262" width="74" height="56" rx="8" fill="#dfe6ea" stroke="${INK}" stroke-width="3"/>${BT(273, 296, 'generator', 13, '#333')}
+    <path d="M200,300 H236" stroke="${INK}" stroke-width="5"/><path d="M310,280 C350,280 340,200 380,200" fill="none" stroke="#e2a83b" stroke-width="5"/>
+    <g id="t-lamps"></g>
+    ${BT(70, 0, '', 21, '#1e3f78', 't-hl')}
+    ${BT(470, 56, '', 30, '#1b7a3c', 't-p')}${BT(470, 84, 'daya listrik', 19, '#333')}
+    ${BT(462, 322, '', 19, '#333', 't-ll')}${BT(462, 348, '', 19, '#e2553a', 't-loss')}
+  </svg>`;
+  const ctrl = `${slider('t-q', 'Air yang jatuh tiap detik', 10, 100, 10, 50, 'kg')}
+    ${slider('t-h', 'Tinggi jatuh (h)', 1, 10, 1, 4, 'm')}
+    ${slider('t-e', 'Efisiensi (η)', 30, 90, 10, 60, '%')}
+    <p class="lab-lbl">Satu gambar lampu = 100 lampu LED 10 W</p>`;
+  const html = simShell('lab-3', 3, 'Turbin air mini', 'rume',
+    'Atur banyaknya air, tinggi jatuh, dan efisiensi turbin. Hitung berapa lampu yang bisa dinyalakan oleh air yang jatuh.',
+    ctrl, svg, `<p id="t-out"></p>`,
+    ['Hasilkan daya listrik <b>minimal 3.000 W</b>.', 'Dengan tinggi jatuh hanya <b>2 m</b>, nyalakan <b>minimal 100 lampu</b> (1.000 W).', 'Turunkan efisiensi menjadi <b>30%</b>. Berapa watt yang terbuang menjadi kalor dan bunyi?']);
+  return { html, init(root) {
+    const $ = s => root.querySelector(s), qE = $('#t-q'), hE = $('#t-h'), eE = $('#t-e'); let P = 0, rot = 0, last = 0;
+    const still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function upd() {
+      const q = +qE.value, h = +hE.value, e = +eE.value, Pin = q * G * h; P = Pin * e / 100;
+      $('#t-q-o').textContent = `${q} kg`; $('#t-h-o').textContent = `${h} m`; $('#t-e-o').textContent = `${e} %`;
+      const ty = 300 - h * 22;
+      $('#t-cliff').setAttribute('y', ty + 16); $('#t-cliff').setAttribute('height', 314 - ty); $('#t-top').setAttribute('y', ty);
+      const fw = 8 + q * .22; $('#t-fall').setAttribute('y', ty + 16); $('#t-fall').setAttribute('height', 300 - ty); $('#t-fall').setAttribute('width', fw);
+      const hl = $('#t-hl'); hl.setAttribute('y', ty - 10); hl.textContent = `h = ${h} m`;
+      const n = Math.floor(P / 1000); let g = ''; for (let i = 0; i < 9; i++) g += bulb(410 + (i % 3) * 60, 130 + Math.floor(i / 3) * 62, i < n, .9);
+      $('#t-lamps').innerHTML = g; $('#t-p').textContent = `${fmt(P)} W`;
+      $('#t-ll').textContent = `${fmt(Math.floor(P / 10))} lampu LED menyala`; $('#t-loss').textContent = `terbuang: ${fmt(Pin - P)} W`;
+      $('#t-out').innerHTML = `P masuk = m·g·h / t = ${q} × 10 × ${h} / 1 = <b>${fmt(Pin)} W</b>. P keluar = ${e}% × ${fmt(Pin)} = <b>${fmt(P)} W</b>. Terbuang menjadi kalor dan bunyi: <b>${fmt(Pin - P)} W</b>.`;
+      if (P >= 3000) done(root, 0);
+      if (h === 2 && P >= 1000) done(root, 1);
+      if (e === 30) done(root, 2);
+    }
+    function loop(now) { if (!root.isConnected) return; const dt = Math.min(60, now - last); last = now; rot = (rot + dt * (.03 + P / 9000 * .5)) % 360; $('#t-wh').setAttribute('transform', `translate(170,300) rotate(${rot})`); requestAnimationFrame(loop); }
+    [qE, hE, eE].forEach(x => x.addEventListener('input', upd)); upd(); if (!still) requestAnimationFrame(now => { last = now; requestAnimationFrame(loop); });
+  } };
+}
+
+/* ---------- LKPD Pertemuan ke-4 ---------- */
+const ISI = [
+  ['A. Bidang miring licin (hukum kekekalan energi mekanik)', [['Ep di puncak', 'J', 100, .5], ['Ek di dasar bidang miring', 'J', 100, .5], ['v di dasar bidang miring', 'm/s', 10, .05]], 'Ep = m·g·h. Karena licin, seluruh Ep menjadi Ek. Lalu v = √(2·Ek / m).'],
+  ['B. Lantai kasar (usaha gaya gesek dan perubahan energi kinetik)', [['Gaya gesek fk', 'N', 4, .05], ['Usaha gaya gesek W', 'J', -12, .05], ['Ek setelah lantai kasar', 'J', 88, .5], ['v setelah lantai kasar', 'm/s', 9.38, .06]], 'fk = μk·m·g. Usaha gaya gesek bernilai negatif: W = −fk·s. Ek akhir = Ek awal + W.'],
+  ['C. Menumbuk pegas (energi kinetik menjadi energi potensial pegas)', [['Pegas tertekan sejauh x', 'm', 0.94, .011]], 'Saat kotak berhenti, seluruh Ek sudah menjadi Ep pegas: ½·k·x² = Ek.'],
+];
+function simLkpd() {
+  const ta = (id, rows = 3) => `<textarea id="${id}" rows="${rows}" placeholder="Tulis jawabanmu di sini"></textarea>`;
+  const key = (t) => `<details class="lk-key"><summary>Lihat contoh jawaban</summary><p>${t}</p></details>`;
+  let ni = 0;
+  const html = `<section class="lab lkpd" id="lkpd" data-sim="lkpd">
+    <div class="lab-hd"><span class="lab-tag">LKPD Pertemuan ke-4</span><h3>Penguatan dan Aplikasi Terintegrasi Usaha, Energi, dan Daya</h3></div>
+    <div class="lk-in">
+      <div class="lk-id"><label>Nama / Kelompok <input id="lk-nama" type="text"></label><label>Kelas <input id="lk-kelas" type="text"></label><label>Tanggal <input id="lk-tgl" type="text"></label></div>
+      <p class="lk-goal"><b>Tujuan:</b> (1) mengidentifikasi konsep fisika yang relevan dalam kasus terintegrasi; (2) mengaplikasikan konsep usaha, energi kinetik, energi potensial, hukum kekekalan energi mekanik, dan daya untuk menyelesaikan masalah; (3) mempertajam keterampilan analisis dan pemecahan masalah.</p>
+      <p class="lk-goal"><b>Alat dan bahan:</b> kalkulator saintifik, buku catatan atau sumber referensi.<br><b>Petunjuk:</b> baca soal kasus dengan saksama, tuliskan yang diketahui dan ditanyakan, diskusikan konsep yang relevan bersama kelompok, selesaikan dengan langkah yang runtut, dan tulis satuan pada setiap hasil.</p>
+
+      <h4>Bagian 1. Analisis kasus dan identifikasi masalah</h4>
+      <p><b>Soal kasus 1.</b> Sebuah balok bermassa 2 kg dilepas dari puncak bidang miring licin (tanpa gesekan) setinggi 5 m. Setelah meluncur di bidang miring, balok melewati permukaan datar kasar sepanjang 3 m (koefisien gesek kinetis 0,2). Setelah melewati permukaan kasar, balok menumbuk sebuah pegas yang memiliki konstanta pegas 200 N/m. (Gunakan g = 10 m/s².)</p>
+      <div class="lk-fig"><svg viewBox="0 150 1000 540" role="img" aria-label="Sketsa lintasan balok">${BOARD.lintasan().replace(/<text x="500" y="84"[^>]*>[^<]*<\/text>/, '').replace(/<text x="500" y="724"[^>]*>[^<]*<\/text>/, '')}</svg></div>
+      <p><b>Pertanyaan diskusi</b></p>
+      <p>1. Konsep fisika apa saja yang relevan untuk menganalisis gerak balok dari awal sampai menumbuk pegas?</p>${ta('lk-1')}
+      ${key('Energi potensial gravitasi, energi kinetik, hukum kekekalan energi mekanik (di bidang miring licin), usaha oleh gaya gesek (di permukaan kasar), dan energi potensial pegas.')}
+      <p>2. Bagaimana cara menghitung energi balok di setiap tahap geraknya?</p>${ta('lk-2')}
+      ${key('Di puncak: Ep = m·g·h. Di dasar bidang miring: Ek = Ep puncak. Setelah permukaan kasar: Ek berkurang sebesar usaha gaya gesek. Saat pegas tertekan maksimum: Ep pegas = Ek yang tersisa.')}
+      <p>3. Apa yang ingin kalian ketahui dari kasus ini? Rumuskan satu pertanyaan yang spesifik.</p>${ta('lk-3', 2)}
+
+      <h4>Bagian 2. Pengumpulan dan pengolahan data</h4>
+      <p>Selesaikan soal kasus 1. Ketik hasil hitunganmu, lalu kotak akan berubah warna: hijau berarti benar.</p>
+      ${ISI.map(([t, rows, hint]) => `<p><b>${t}</b></p><div class="lk-nums">${rows.map(([lab, unit]) => { const i = ni++; return `<label class="lk-num" data-i="${i}"><span>${lab} =</span><input type="text" inputmode="decimal" id="lk-n${i}" autocomplete="off"><span class="u">${unit}</span></label>`; }).join('')}</div><details class="lk-key"><summary>Petunjuk</summary><p>${hint}</p></details>`).join('')}
+      <p class="lk-score" id="lk-s">Benar: 0 dari ${ni}</p>
+
+      <p><b>Pertanyaan analisis</b></p>
+      <p>4. Jelaskan bagaimana energi mekanik berubah ketika balok bergerak di bidang miring licin, dan bagaimana perubahannya di permukaan kasar.</p>${ta('lk-4', 4)}
+      ${key('Di bidang miring licin energi mekanik tetap 100 J: Ep berkurang, Ek bertambah sama besar. Di permukaan kasar energi mekanik berkurang 12 J karena usaha gaya gesek, dan energi itu berubah menjadi kalor.')}
+      <p>5. Jika balok didorong kembali ke atas bidang miring dengan kecepatan konstan dalam waktu tertentu, konsep apa yang kalian gunakan untuk menghitung daya yang dibutuhkan? Tuliskan rumusan perhitungannya.</p>${ta('lk-5', 4)}
+      ${key('Konsep daya. Pada kecepatan konstan di bidang licin, usaha yang diperlukan sama dengan pertambahan energi potensial: W = m·g·h = 100 J. Daya P = W / t, atau P = F·v. Misalnya dalam 5 s, P = 100 / 5 = 20 W.')}
+
+      <h4>Kesimpulan</h4>
+      <p>Tuliskan satu paragraf yang merangkum pemahamanmu tentang integrasi konsep usaha, energi (kinetik dan potensial), hukum kekekalan energi mekanik, dan daya dalam menganalisis fenomena fisika yang lebih kompleks.</p>${ta('lk-k', 5)}
+
+      <h4>Refleksi diri</h4>
+      <p>Bagian mana dari konsep usaha, energi, dan daya yang paling saya kuasai sekarang?</p>${ta('lk-r1', 2)}
+      <p>Kesulitan apa yang masih saya hadapi saat mengaplikasikan konsep-konsep ini dalam soal terintegrasi, dan bagaimana saya akan mengatasinya?</p>${ta('lk-r2', 2)}
+      <p>Bagaimana penguasaan konsep-konsep ini dapat membantu saya dalam mata pelajaran lain atau di kehidupan nyata?</p>${ta('lk-r3', 2)}
+      <p class="lk-note">Jawaban tersimpan di perangkat ini saja. Salin ke buku tulis atau tangkap layar untuk dikumpulkan ke gurumu.</p>
+    </div></section>`;
+  return { html, init(root) {
+    const ans = ISI.flatMap(s => s[1]);
+    const check = () => {
+      let ok = 0;
+      root.querySelectorAll('.lk-num').forEach(l => {
+        const [, , a, tol] = ans[+l.dataset.i], raw = l.querySelector('input').value.trim().replace(/\s/g, '').replace('−', '-').replace(',', '.');
+        const v = raw === '' ? NaN : Number(raw), good = !isNaN(v) && (Math.abs(v - a) <= tol || (a < 0 && Math.abs(v + a) <= tol));
+        l.classList.toggle('ok', good); l.classList.toggle('no', raw !== '' && !good); if (good) ok++;
+      });
+      root.querySelector('#lk-s').textContent = `Benar: ${ok} dari ${ans.length}`;
+    };
+    root.querySelectorAll('textarea, input[type=text]').forEach(el => {
+      try { const v = localStorage.getItem('usaha:' + el.id); if (v) el.value = v; } catch (e) {}
+      el.addEventListener('input', () => { try { localStorage.setItem('usaha:' + el.id, el.value); } catch (e) {} if (el.closest('.lk-num')) check(); });
+    });
+    check();
+  } };
+}
+
+const SIMS = { luncur: simLuncur, daya: simDaya, turbin: simTurbin, lkpd: simLkpd };
+function renderSim(key) {
+  const s = SIMS[key](); const wrap = document.createElement('div'); wrap.innerHTML = s.html.trim();
+  const el = wrap.firstElementChild; s.init(el); return el;
+}
+</script>
+<script>
+const PHOTO = "";
+const esc = s => s;
+function avatar(who, e = 'smile') {
+  const o = who === 'oto' ? { x: 0, y: 0, goggles: 'head' } : { x: 0, y: 0 };
+  return `<svg viewBox="-150 -410 300 300" aria-hidden="true">${ch(who, e, o)}</svg>`;
+}
+const TAIL = `<svg class="tail" viewBox="0 0 30 34" aria-hidden="true"><path d="M2,0 L12,32 L28,0" fill="#fff" stroke="#1d1416" stroke-width="3" stroke-linejoin="round"/></svg>`;
+const DOTS = `<svg class="dots" viewBox="0 0 40 40" aria-hidden="true"><circle cx="12" cy="10" r="8" fill="#fff" stroke="#1d1416" stroke-width="3"/><circle cx="4" cy="30" r="4.5" fill="#fff" stroke="#1d1416" stroke-width="3"/></svg>`;
+
+function panelArt(p, grow = 0) {
+  const h = p.h + grow;
+  let s = `<svg viewBox="0 0 1000 ${h}" role="img" aria-label="Panel komik">`;
+  s += SCENE[p.bg](h);
+  if (p.board) s += BOARD[p.board](h);
+  (p.chars || []).forEach(([w, e, o]) => { s += ch(w, e, { ...o, y: (o.y ?? 900) + grow }); });
+  if (p.extra) s += p.extra(h);
+  s += `</svg>`;
+  return s;
+}
+function renderPanel(p, grow = 0) {
+  const el = document.createElement('div');
+  el.className = 'panel';
+  el._p = p; el._grow = grow;
+  if (p.id) el.id = p.id;
+  let html = `<div class="art">${panelArt(p, grow)}`;
+  if (p.cap) html += `<div class="cap" style="left:${p.cap.x}%;top:${p.cap.y}%;width:${p.cap.w}%">${p.cap.t}</div>`;
+  (p.b || []).forEach(b => {
+    html += `<div class="bubble ${b.think ? 'think' : (b.tail || 'bl')}" style="left:${b.x}%;top:${b.y}%;width:${b.wd}%"><span class="nm n-${b.w}">${NAMES[b.w]}</span><br>${b.t}${b.think ? DOTS : (b.tail === 'none' ? '' : TAIL)}</div>`;
+  });
+  (p.sfx || []).forEach(f => { html += `<div class="sfx" style="left:${f.x}%;top:${f.y}%;font-size:${f.size}cqw;transform:rotate(${f.rot || 0}deg)">${f.t}</div>`; });
+  if (p.chat) html += `<div class="chat">${p.chat.map(m => `<div class="m ${m.me ? 'me' : ''}"><b class="c-${m.w}">${NAMES[m.w]}</b>${m.t}</div>`).join('')}</div>`;
+  html += `</div>`;
+  if (p.say) html += `<div class="say">${p.say.map(r => `<div class="row"><div class="av">${avatar(r.w, r.w === 'fitria' ? 'explain' : 'talk')}</div><div class="txt"><b class="nm n-${r.w}">${NAMES[r.w]}</b><br>${r.t}</div></div>`).join('')}</div>`;
+  el.innerHTML = html;
+  return el;
+}
+function renderChapter(c) {
+  const el = document.createElement('section');
+  el.className = 'chapter'; el.id = c.id;
+  el.innerHTML = `<div class="band">${bandSVG()}</div><div class="in"><span class="no">${c.no}</span><h2>${c.title}</h2><span class="topic">${c.topic}</span></div>`;
+  return el;
+}
+function renderProblem(c) {
+  const el = document.createElement('section');
+  el.className = 'problem';
+  el.innerHTML = `<span class="stamp">${c.title}</span><span class="place">Lokasi: ${c.place}</span><ol>${c.qs.map(q => `<li>${q}</li>`).join('')}</ol><p class="hint">Diskusikan dugaanmu bersama teman sebangku sebelum membaca halaman berikutnya.</p>`;
+  return el;
+}
+function renderCalc(c) {
+  const el = document.createElement('section');
+  el.className = 'calc';
+  el.innerHTML = `<div class="hd"><div class="av">${avatar(c.who, 'grin')}</div><h3>${c.title}</h3></div><div class="lines">${c.lines.map(([k, v]) => `<span class="k">${k}</span><span>${v}</span>`).join('')}</div><p class="note">${c.note}</p>`;
+  return el;
+}
+
+/* ---- boot ---- */
+document.getElementById('defs').innerHTML = defs();
+document.getElementById('band1').innerHTML = bandSVG();
+try {
+  const bt = `<svg xmlns='http://www.w3.org/2000/svg' width='96' height='84'><rect width='96' height='84' fill='#2b8fd6'/>${sorumeC(26, 30, 24, '#ffffff', '#e8873a', '#e8873a', 10)}${sorumeC(74, 66, 14, '#ffffff', '#e8873a', '#e8873a', -20)}${wave(54, 22, 1, '#1d2f7a')}${wave(6, 74, 1, '#1d2f7a')}<circle cx='84' cy='14' r='3' fill='#e8873a'/><circle cx='46' cy='52' r='2.4' fill='#fff'/></svg>`;
+  document.documentElement.style.setProperty('--batik-biru', `url("data:image/svg+xml,${encodeURIComponent(bt)}")`);
+} catch (e) {}
+try {
+  const pat = `<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><g opacity='.16'>${crossX(30, 30, 9, '#e2a83b', 3)}${sorume(90, 88, 22, '#e2a83b')}</g></svg>`;
+  document.body.style.backgroundImage = `url("data:image/svg+xml,${encodeURIComponent(pat)}")`;
+} catch (e) {}
+
+document.getElementById('coverArt').appendChild(renderPanel({
+  h: 700, bg: 'gudang', extra: h => `<g transform="translate(10,${h * .57 * .4}) scale(.6)">${chute(h, .12, .57, .1)}</g>`,
+  chars: [
+    ['fitria', 'happy', { x: 790, y: 540, s: .78, flip: true }],
+    ['tugu', 'smile', { x: 110, y: 760, s: .72 }], ['rume', 'happy', { x: 305, y: 760, s: .74 }],
+    ['soru', 'grin', { x: 500, y: 760, s: .76 }], ['devi', 'grin', { x: 695, y: 760, s: .74, pose: 'wave', flip: true }],
+    ['oto', 'grin', { x: 890, y: 760, s: .72, goggles: 'head', flip: true }],
+  ],
+}));
+
+const CAST = [
+  { w: 'soru', name: 'Soru', tag: 'Suku Tolaki', d: 'Rambut cepak, ikat kepala batik biru bermotif bunga sorume. Aktif, menyenangkan, pintar, dan kreatif. Suka bercanda tapi selalu penasaran.' },
+  { w: 'rume', name: 'Rume', tag: 'Suku Bugis', d: 'Berjilbab dengan pin bunga sorume. Manis, santun, pintar, dan kreatif. Teliti memilih kata.' },
+  { w: 'tugu', name: 'Tugu', tag: 'Suku Moronene', d: 'Dari Bombana. Berkacamata, tenang, dan jago berhitung. Selalu siap dengan "Ayo Hitung".' },
+  { w: 'devi', name: 'Devi', tag: 'Suku Bali', d: 'Dari Konawe Selatan. Ceria, rajin, dan suka mengamati. Bunga jepun selalu terselip di rambutnya.' },
+  { w: 'oto', name: 'Oto', tag: 'Suku Bajo', d: 'Anak pesisir Soropia. Jago menyelam dan berenang, kacamata selam kayu buatan bapaknya tak pernah jauh.' },
+];
+const cast = document.getElementById('cast');
+cast.insertAdjacentHTML('beforeend', `<article class="card-c teacher"><div class="av" style="width:100px;height:100px">${avatar('fitria', 'happy')}</div><div><h3>Bu Fitria Ashari</h3><span class="tag">Guru Fisika</span><p>Guru yang sabar dan hangat. Senang mengajak siswa belajar dari kejadian sehari-hari di sekitar Sulawesi Tenggara. Di komik, beliau berkerudung krem dengan batik merah bermotif bunga sorume.</p></div></article>`);
+CAST.forEach(c => cast.insertAdjacentHTML('beforeend', `<article class="card-c"><div class="av">${avatar(c.w, 'happy')}</div><div><h3>${c.name}</h3><span class="tag">${c.tag}</span><p>${c.d}</p></div></article>`));
+cast.appendChild(document.querySelector('.motif-note'));
+document.getElementById('motifSwatch').innerHTML = `<svg viewBox="0 0 64 64"><rect width="64" height="64" fill="url(#pBatikMerah)"/></svg>`;
+
+const strip = document.getElementById('strip');
+STORY.forEach(p => {
+  const t = p.type;
+  strip.appendChild(t === 'sim' ? renderSim(p.sim) : t === 'chapter' ? renderChapter(p) : t === 'problem' ? renderProblem(p) : t === 'calc' ? renderCalc(p) : renderPanel(p));
+});
+
+document.getElementById('sum').innerHTML = SUMMARY.map(s => `<article class="s"><h3>${s.t}</h3><span class="f">${s.f}</span><p>${s.d}</p></article>`).join('');
+
+/* keep speech bubbles and captions off the characters' heads: grow the panel's sky area when they collide */
+function headBoxes(p, grow) {
+  return (p.chars || []).filter(([, , o]) => !o.rot).map(([w, , o]) => {
+    const sc = (o.s ?? 1) * (w === 'fitria' ? 1.03 : 1), y = (o.y ?? 900) + grow, x = o.x ?? 500;
+    return { l: x - 100 * sc, r: x + 100 * sc, t: y - 382 * sc, b: y - 165 * sc };
+  });
+}
+function overlapNeed(el) {
+  const p = el._p, grow = el._grow, art = el.querySelector('.art');
+  const ar = art.getBoundingClientRect(); const f = ar.width / 1000; if (!f) return 0;
+  const H = p.h + grow; let need = 0;
+  el.querySelectorAll('.bubble, .cap').forEach(b => {
+    const r = b.getBoundingClientRect();
+    const extra = b.classList.contains('think') ? .055 * ar.width : (b.classList.contains('bubble') ? .036 * ar.width : 0);
+    const top = (r.top - ar.top) / f, bot = (r.bottom - ar.top + extra) / f, l = (r.left - ar.left) / f, rr = (r.right - ar.left) / f;
+    headBoxes(p, grow).forEach(hb => {
+      const hx = Math.min(rr, hb.r) - Math.max(l, hb.l);
+      const allowed = hb.t + (hb.b - hb.t) * .06;
+      if (hx > 14 && bot > allowed && top < hb.b) {
+        const frac = Math.min(.8, top / H);
+        need = Math.max(need, (bot - allowed + 14) / (1 - frac));
+      }
+    });
+  });
+  return Math.min(need, 420);
+}
+function fitPanels() {
+  document.querySelectorAll('#strip .panel').forEach(el => {
+    if (!el._p || !el._p.chars) return;
+    let cur = el;
+    if (cur._grow) { const fresh = renderPanel(cur._p, 0); cur.replaceWith(fresh); cur = fresh; }
+    for (let k = 0; k < 4; k++) {
+      const need = overlapNeed(cur); if (need <= 0) break;
+      const next = renderPanel(cur._p, Math.round(cur._grow + need)); cur.replaceWith(next); cur = next;
+    }
+  });
+}
+let lastW = 0, fitTimer;
+function refit() { const w = document.getElementById('strip').clientWidth; if (w === lastW) return; lastW = w; fitPanels(); }
+(document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(refit);
+setTimeout(refit, 1200);
+window.addEventListener('resize', () => { clearTimeout(fitTimer); fitTimer = setTimeout(refit, 250); });
+
+/* Lab Mini menu in the top bar */
+(() => {
+  const btn = document.getElementById('labBtn'), menu = document.getElementById('labMenu');
+  const set = open => { menu.hidden = !open; btn.setAttribute('aria-expanded', open); };
+  btn.addEventListener('click', e => { e.stopPropagation(); set(menu.hidden); });
+  menu.addEventListener('click', e => { if (e.target.closest('a')) set(false); });
+  document.addEventListener('click', e => { if (!menu.hidden && !e.target.closest('#labMenu')) set(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') set(false); });
+})();
+
+/* quiz */
+const quizEl = document.getElementById('quiz');
+let answered = {};
+function drawQuiz() {
+  answered = {};
+  quizEl.innerHTML = QUIZ.map((q, i) => `<article class="qz" data-i="${i}"><span class="qn">Soal ${i + 1}</span><p class="qq">${q.q}</p><div class="opts">${q.o.map((o, j) => `<button type="button" id="q${i}o${j}" data-j="${j}"><span class="l">${'ABCD'[j]}</span><span>${o}</span></button>`).join('')}</div><p class="ex" hidden></p></article>`).join('');
+  updateScore();
+}
+function updateScore() {
+  const n = Object.values(answered).filter(Boolean).length;
+  document.getElementById('scoreTxt').textContent = `${n} / ${QUIZ.length}`;
+}
+quizEl.addEventListener('click', e => {
+  const btn = e.target.closest('button'); if (!btn) return;
+  const card = btn.closest('.qz'); const i = +card.dataset.i; if (i in answered) return;
+  const j = +btn.dataset.j; const q = QUIZ[i];
+  answered[i] = j === q.a;
+  card.querySelectorAll('button').forEach((b, k) => { b.disabled = true; if (k === q.a) b.classList.add('right'); else if (k === j) b.classList.add('wrong'); });
+  const ex = card.querySelector('.ex'); ex.innerHTML = `<b>${j === q.a ? 'Benar!' : 'Belum tepat.'}</b> ${q.e}`; ex.hidden = false;
+  updateScore();
+});
+document.getElementById('resetQuiz').addEventListener('click', drawQuiz);
+drawQuiz();
+</script>
+
+</body>
+</html>
